@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Logo from '../assets/Logo';
 import tw, { styled } from 'twin.macro';
 import menuLinks from '../data/menuLinks';
 import Image from 'next/image';
@@ -16,7 +15,7 @@ const Navbar = () => {
             </Link>
             <ul className='nav'>
                 {menuLinks.map((link) => (
-                    <li id={link.id}>
+                    <li key={link.id}>
                         <Link href={link.url}>{link.label}</Link>
                     </li>
                 ))}

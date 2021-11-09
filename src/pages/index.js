@@ -1,9 +1,11 @@
 import 'twin.macro';
+import Hero from '../assets/Hero';
+import Layout from '../components/Layout';
 
 export default function Home() {
     return (
-        <div>
-            <h1 tw='text-4xl font-bold text-primary'>Hello iTopUp</h1>
-        </div>
+        <Layout>
+            <Hero />
+        </Layout>
     );
 }

@@ -1,11 +1,19 @@
-import React from 'react'
+import React from 'react';
+import Navbar from './Navbar';
 
-const Layout = ({children}) => {
+import tw, { styled } from 'twin.macro';
+
+const Layout = ({ children }) => {
     return (
-        <div>
-            {children}
-        </div>
-    )
-}
+        <StyledLayout>
+            <Navbar />
+            <main>{children}</main>
+        </StyledLayout>
+    );
+};
 
-export default Layout
+export default Layout;
+
+const StyledLayout = styled.div`
+    ${tw`max-w-6xl px-3 md:px-5 mx-auto`}
+`;

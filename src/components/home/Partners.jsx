@@ -21,13 +21,19 @@ const Partners = () => {
                         autoplay={true}
                         spaceBetween={50}
                         slidesPerView={3}
+                        loop
                         navigation={{
                             prevEl: navigationPrevRef.current,
                             nextEl: navigationNextRef.current
                         }}
                         onBeforeInit={(swiper) => {
-                            swiper.params.navigation.prevEl = navigationPrevRef.current;
-                            swiper.params.navigation.nextEl = navigationNextRef.current;
+                            setTimeout(() => {
+                                swiper.params.navigation.prevEl = navigationPrevRef.current;
+                                swiper.params.navigation.nextEl = navigationNextRef.current;
+                                swiper.navigation.destroy();
+                                swiper.navigation.init();
+                                swiper.navigation.update();
+                            }, 500);
                         }}
                         onSlideChange={() => console.log('slide change')}
                         onSwiper={(swiper) => console.log(swiper)}>
@@ -89,7 +95,7 @@ const Partners = () => {
                         </SwiperSlide>
                     </Swiper>
                 </div>
-                <div tw='absolute bottom-1/2 border flex w-full justify-center space-x-4'>
+                <div tw='absolute bottom-5 flex w-full justify-center space-x-4'>
                     <button ref={navigationPrevRef}>
                         <Image alt='left-arrow' src='/icons/leftarrow.png' height={42} width={42} />
                     </button>
@@ -110,7 +116,7 @@ const Partners = () => {
 export default Partners;
 
 const StyledContent = styled.div`
-    ${tw`flex relative background-color[#FB9747] h-64 mt-24  `};
+    ${tw`flex relative bg-secondary h-40 mt-24  `};
     .sliderContainer {
         ${tw`bg-white absolute h-32 -top-16 w-full max-width[1170px] left-1/2 transform -translate-x-1/2  p-5 px-10 shadow-md border flex items-center justify-center `}
 

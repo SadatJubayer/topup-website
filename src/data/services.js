@@ -1,4 +1,4 @@
-export default {
+const services = {
     title: 'Services We Provide',
     subtitle:
         'We are the largest, globally-distributed network of top business, design, and technology talent, ready to tackle your most important initiatives.',
@@ -47,3 +47,5 @@ export default {
         }
     ]
 };
+
+export default services;

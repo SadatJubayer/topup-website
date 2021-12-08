@@ -12,8 +12,8 @@ const Services = () => {
                 <SectionTitle title={services.title} subtitle={services.subtitle} />
                 <div className='items'>
                     {services.items.map((item) => (
-                        <div className='service'>
-                            <Image src={item.image} height={51} width={34} />
+                        <div key={item.id} className='service'>
+                            <Image alt={item.name} src={item.image} height={51} width={34} />
                             <h3>{item.name}</h3>
                             <p>{item.details}</p>
                         </div>

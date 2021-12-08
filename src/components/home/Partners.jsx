@@ -4,7 +4,6 @@ import tw, { styled } from 'twin.macro';
 import Image from 'next/image';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import LeftIcon from '../../assets/LeftIcon';
 SwiperCore.use([Navigation, Pagination]);
 
 const Partners = () => {
@@ -33,28 +32,74 @@ const Partners = () => {
                         onSlideChange={() => console.log('slide change')}
                         onSwiper={(swiper) => console.log(swiper)}>
                         <SwiperSlide>
-                            <Image src={`/icons/intelligent.png`} height={51} width={34} />
+                            <Image
+                                alt='hello'
+                                src={`/icons/intelligent.png`}
+                                height={51}
+                                width={34}
+                            />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Image src={`/icons/intelligent.png`} height={51} width={34} />
+                            <Image
+                                alt='hello'
+                                src={`/icons/intelligent.png`}
+                                height={51}
+                                width={34}
+                            />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Image src={`/icons/intelligent.png`} height={51} width={34} />
+                            <Image
+                                alt='hello'
+                                src={`/icons/intelligent.png`}
+                                height={51}
+                                width={34}
+                            />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Image src={`/icons/intelligent.png`} height={51} width={34} />
+                            <Image
+                                alt='hello'
+                                src={`/icons/intelligent.png`}
+                                height={51}
+                                width={34}
+                            />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Image src={`/icons/intelligent.png`} height={51} width={34} />
+                            <Image
+                                alt='hello'
+                                src={`/icons/intelligent.png`}
+                                height={51}
+                                width={34}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <Image
+                                alt='hello'
+                                src={`/icons/intelligent.png`}
+                                height={51}
+                                width={34}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <Image
+                                alt='hello'
+                                src={`/icons/intelligent.png`}
+                                height={51}
+                                width={34}
+                            />
                         </SwiperSlide>
                     </Swiper>
                 </div>
                 <div tw='absolute bottom-1/2 border flex w-full justify-center space-x-4'>
                     <button ref={navigationPrevRef}>
-                        <Image src='/icons/leftarrow.png' height={42} width={42} />
+                        <Image alt='left-arrow' src='/icons/leftarrow.png' height={42} width={42} />
                     </button>
                     <button ref={navigationNextRef}>
-                        <Image src='/icons/rightarrow.png' height={42} width={42} />
+                        <Image
+                            alt='right-arrow'
+                            src='/icons/rightarrow.png'
+                            height={42}
+                            width={42}
+                        />
                     </button>
                 </div>
             </StyledContent>

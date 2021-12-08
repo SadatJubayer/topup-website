@@ -10,10 +10,15 @@ const Navbar = () => {
     return (
         <Container>
             <StyledNav>
-                <Link href='/'>
-                    <div className='brand'>
-                        <Image src='/logo@2x.png' layout='fill' objectFit='contain' />
-                    </div>
+                <Link href='/' passHref>
+                    <a className='brand'>
+                        <Image
+                            alt='topUp-brand'
+                            src='/logo@2x.png'
+                            layout='fill'
+                            objectFit='contain'
+                        />
+                    </a>
                 </Link>
                 <ul className='nav'>
                     {menuLinks.map((link) => (
@@ -22,13 +27,15 @@ const Navbar = () => {
                         </li>
                     ))}
                     <li>
-                        <Link href='/hire'>
-                            <Button text='Hire us' />
+                        <Link href='/hire' passHref>
+                            <a>
+                                <Button text='Hire us' />
+                            </a>
                         </Link>
                     </li>
                 </ul>
                 <div className='mobileNav'>
-                    <Image src='/menuIcon.png' height={30} width={30} />
+                    <Image alt='menu' src='/menuIcon.png' height={30} width={30} />
                 </div>
             </StyledNav>
         </Container>

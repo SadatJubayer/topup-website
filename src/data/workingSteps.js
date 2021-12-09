@@ -6,12 +6,27 @@ const workingSteps = {
         {
             id: '1',
             title: 'How we Find talents',
-            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting is the  industry. Lorem Ipsum has been the industry's standard dummy text ever Lorem Ipsum is simply dummy text of the printing"
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting is the  industry. Lorem Ipsum has been the industry's standard dummy text ever Lorem Ipsum is simply dummy text of the printing."
         },
         {
             id: '2',
             title: 'How we negotiate',
-            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting is the  industry. Lorem Ipsum has been the industry's standard dummy text ever Lorem Ipsum is simply dummy text of the printing"
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting is the  industry. Lorem Ipsum has been the industry's standard dummy text ever Lorem Ipsum is simply dummy text of the printing."
+        },
+        {
+            id: '3',
+            title: 'How we negotiate',
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting is the  industry. Lorem Ipsum has been the industry's standard dummy text ever Lorem Ipsum is simply dummy text of the printing."
+        },
+        {
+            id: '4',
+            title: 'How we negotiate',
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting is the  industry. Lorem Ipsum has been the industry's standard dummy text ever Lorem Ipsum is simply dummy text of the printing."
+        },
+        {
+            id: '5',
+            title: 'How we negotiate',
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting is the  industry. Lorem Ipsum has been the industry's standard dummy text ever Lorem Ipsum is simply dummy text of the printing."
         }
     ]
 };

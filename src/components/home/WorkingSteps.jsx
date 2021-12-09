@@ -9,7 +9,7 @@ const WorkingSteps = () => {
         <StyledSteps>
             <div className='left'>
                 <h2>{workingSteps.title}</h2>
-                <p>{workingSteps.subTitle}</p>
+                <p className='subTitle'>{workingSteps.subTitle}</p>
                 <div className='steps'>
                     {workingSteps.steps.map((step) => (
                         <Steps
@@ -17,6 +17,7 @@ const WorkingSteps = () => {
                             key={step.id}
                             title={step.title}
                             subTitle={step.desc}
+                            isExpanded={step.id === '1'}
                         />
                     ))}
                 </div>
@@ -38,11 +39,18 @@ export default WorkingSteps;
 const StyledSteps = styled.div`
     ${tw`my-10 flex justify-between space-x-5 w-full max-width[1170px] mx-auto`};
     .left {
+        ${tw`flex-1`}
         h2 {
             ${tw` text-2xl md:text-3xl font-bold text-grayColor`}
         }
-        p {
+        .subTitle {
             ${tw`font-medium text-gray-800 py-2.5 pr-2`}
         }
+        .steps {
+            ${tw`py-5 space-y-2`}
+        }
+    }
+    .right {
+        ${tw`flex-1 hidden md:block`}
     }
 `;

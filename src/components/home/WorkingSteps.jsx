@@ -41,10 +41,10 @@ const StyledSteps = styled.div`
     .left {
         ${tw`flex-1`}
         h2 {
-            ${tw` text-2xl md:text-3xl font-bold text-grayColor`}
+            ${tw` text-2xl md:text-3xl font-bold text-grayColor  text-center md:text-left`}
         }
         .subTitle {
-            ${tw`font-medium text-gray-800 py-2.5 pr-2`}
+            ${tw`font-medium text-gray-800 py-2.5 pr-2  text-center md:text-left`}
         }
         .steps {
             ${tw`py-5 space-y-2`}

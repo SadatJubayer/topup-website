@@ -10,7 +10,7 @@ const Steps = ({ serial, title, subTitle, isExpanded }) => {
                 <span>{serial}</span>
                 <h3>{title}</h3>
                 <div className='icon'>
-                    <BsPlusLg />
+                    <BsPlusLg color={expanded && '#FB9747'} />
                 </div>
             </div>
             <StyledDescription isVisible={expanded}>{subTitle}</StyledDescription>
@@ -29,7 +29,7 @@ const StyledDescription = styled.p`
 const StyledStep = styled.div`
     ${tw`flex flex-col text-grayColor`};
     .title {
-        ${tw`flex justify-start items-center uppercase bg-lightGray cursor-pointer`}
+        ${tw`flex justify-start items-center uppercase bg-lightGray cursor-pointer select-none`}
         span {
             ${tw`height[42px] width[40px] md:(height[66px] width[64px]) text-white  bg-secondary flex justify-center items-center text-14 md:text-18`}
         }

@@ -8,5 +8,5 @@ const Button = ({ text, onClick }) => {
 export default Button;
 
 const StyledButton = styled.button`
-    ${tw`bg-primary text-sm text-white px-4 py-2 rounded-full hover:bg-blue-500 `};
+    ${tw`bg-primary text-12 md:text-16 font-medium text-white px-7 py-2.5 rounded-full transition-transform hover:-translate-y-0.5 active:-translate-y-1`};
 `;

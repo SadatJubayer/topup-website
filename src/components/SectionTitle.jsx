@@ -15,9 +15,9 @@ export default SectionTitle;
 const StyledTitle = styled.div`
     ${tw`my-16 w-full flex flex-col space-y-3 items-center justify-center text-center text-grayColor`};
     h2 {
-        ${tw` text-2xl md:text-3xl font-bold`}
+        ${tw`text-25 md:text-38 font-bold`}
     }
     p {
-        ${tw`text-xs max-w-xl leading-6 letter-spacing[25] px-2.5`}
+        ${tw`text-13 md:text-16 font-medium max-w-2xl leading-6 letter-spacing[25] px-2.5`}
     }
 `;

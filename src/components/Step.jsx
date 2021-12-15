@@ -34,7 +34,7 @@ const StyledStep = styled.div`
             ${tw`height[42px] width[40px] md:(height[66px] width[64px]) text-white  bg-secondary flex justify-center items-center text-14 md:text-18`}
         }
         h3 {
-            ${tw`pl-5`}
+            ${tw`pl-5 text-14 md:text-18`}
         }
         .icon {
             ${tw`height[42px] width[40px] md:(height[66px] width[64px]) ml-auto flex justify-center items-center`}

@@ -51,9 +51,9 @@ const StyledNav = styled.nav`
         ${tw` cursor-pointer block relative height[50px] width[120px] md:(height[80px] width[150px]) `}
     }
     .nav {
-        ${tw` hidden md:flex text-textColor space-x-5 items-center text-sm`}
+        ${tw` hidden md:flex text-textColor space-x-5 items-center`}
         a {
-            ${tw`hover:text-primary`}
+            ${tw`hover:text-primary text-17`}
         }
     }
     .mobileNav {

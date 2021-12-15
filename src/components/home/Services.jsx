@@ -1,8 +1,8 @@
 import React from 'react';
-import Container from '../Container';
+import Container from 'components/Container';
 import tw, { styled } from 'twin.macro';
-import SectionTitle from '../SectionTitle';
-import services from '../../data/services';
+import SectionTitle from 'components/SectionTitle';
+import services from 'data/services';
 import Image from 'next/image';
 
 const Services = () => {

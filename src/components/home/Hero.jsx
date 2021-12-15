@@ -1,9 +1,9 @@
 import React from 'react';
-import Button from '../Button';
+import Button from 'components/Button';
 import Image from 'next/image';
 
 import tw, { styled } from 'twin.macro';
-import Container from '../Container';
+import Container from 'components/Container';
 
 const Hero = () => {
     return (

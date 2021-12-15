@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionTitle from '../SectionTitle';
+import SectionTitle from 'components/SectionTitle';
 import tw, { styled } from 'twin.macro';
 import Image from 'next/image';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
@@ -121,10 +121,10 @@ const Partners = () => {
 export default Partners;
 
 const StyledContent = styled.div`
-    ${tw`mt-16 md:mt-32 mb-8 md:mb-16`}
+    ${tw`mt-20 md:mt-32`}
     ${tw`flex relative bg-secondary h-32 md:h-64`};
     .sliderContainer {
-        ${tw`bg-white absolute h-28 md:h-48 w-full max-width[1170px] left-1/2 transform -translate-x-1/2 -translate-y-1/2  p-5 px-10 shadow-md border flex items-center justify-center `}
+        ${tw`bg-white absolute h-28 md:h-48 w-full max-width[1170px] left-1/2 transform -translate-x-1/2 -translate-y-1/2  p-5 px-10 shadow-md border-t border-gray-50 flex items-center justify-center `}
         .swiper-slide {
             ${tw`flex justify-center`}
         }

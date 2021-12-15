@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import tw, { styled } from 'twin.macro';
-import menuLinks from '../data/menuLinks';
+import menuLinks from 'data/menuLinks';
 import Image from 'next/image';
-import Button from './Button';
-import Container from './Container';
+import Button from 'components/Button';
+import Container from 'components/Container';
 
 const Navbar = () => {
     return (

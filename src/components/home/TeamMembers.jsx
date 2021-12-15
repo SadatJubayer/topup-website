@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-import SectionTitle from '../SectionTitle';
+import SectionTitle from 'components/SectionTitle';
 import tw, { styled } from 'twin.macro';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { teamMembers } from '../../data/teamMembers';
+import { teamMembers } from 'data/teamMembers';
 SwiperCore.use([Navigation, Pagination]);
 
 const TeamMembers = () => {

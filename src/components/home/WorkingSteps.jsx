@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import tw, { styled } from 'twin.macro';
-import workingSteps from '../../data/workingSteps';
-import Steps from '../Step';
-import Container from '../Container';
+import workingSteps from 'data/workingSteps';
+import Steps from 'components/Step';
+import Container from 'components/Container';
 
 const WorkingSteps = () => {
     return (

@@ -40,7 +40,7 @@ const WorkingSteps = () => {
 export default WorkingSteps;
 
 const StyledSteps = styled.div`
-    ${tw`my-16 md:my-32 flex justify-between space-x-5 w-full max-width[1170px] mx-auto`};
+    ${tw`my-10 md:my-32 flex justify-between space-x-5 w-full`};
     .left {
         ${tw`flex-1 text-grayColor`}
         h2 {

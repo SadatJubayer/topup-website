@@ -49,14 +49,14 @@ const teamMembers = [
         image: 'zahid.png'
     },
     {
-        id: '2',
+        id: '8',
         name: 'Sohag Hasan Pro',
         designation: 'Backend Pro Developer',
         says: 'We are the largest, globally-distributed network of top business, design, and technology talent, We are the largest,',
         image: 'sohag.png'
     },
     {
-        id: '2',
+        id: '9',
         name: 'Sohag Hasan Pro',
         designation: 'Backend Pro Developer',
         says: 'We are the largest, globally-distributed network of top business, design, and technology talent, We are the largest,',

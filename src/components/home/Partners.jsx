@@ -95,16 +95,21 @@ const Partners = () => {
                         </SwiperSlide>
                     </Swiper>
                 </div>
-                <div tw='absolute bottom-5 flex w-full justify-center space-x-4'>
+                <div className='bottom'>
                     <button ref={navigationPrevRef}>
-                        <Image alt='left-arrow' src='/icons/leftarrow.png' height={42} width={42} />
+                        <Image
+                            alt='left-arrow'
+                            src='/icons/leftarrow.png'
+                            height={100}
+                            width={100}
+                        />
                     </button>
                     <button ref={navigationNextRef}>
                         <Image
                             alt='right-arrow'
                             src='/icons/rightarrow.png'
-                            height={42}
-                            width={42}
+                            height={100}
+                            width={100}
                         />
                     </button>
                 </div>
@@ -116,12 +121,18 @@ const Partners = () => {
 export default Partners;
 
 const StyledContent = styled.div`
-    ${tw`flex relative bg-secondary h-40 mt-24  `};
+    ${tw`mt-16 md:mt-32 mb-8 md:mb-16`}
+    ${tw`flex relative bg-secondary h-32 md:h-64`};
     .sliderContainer {
-        ${tw`bg-white absolute h-32 -top-16 w-full max-width[1170px] left-1/2 transform -translate-x-1/2  p-5 px-10 shadow-md border flex items-center justify-center `}
-
+        ${tw`bg-white absolute h-28 md:h-48 w-full max-width[1170px] left-1/2 transform -translate-x-1/2 -translate-y-1/2  p-5 px-10 shadow-md border flex items-center justify-center `}
         .swiper-slide {
             ${tw`flex justify-center`}
+        }
+    }
+    .bottom {
+        ${tw`absolute bottom-6 md:bottom-12 flex w-full justify-center space-x-4 md:space-x-8`}
+        button {
+            ${tw`h-5 w-5 md:(h-10 w-10)`}
         }
     }
 `;

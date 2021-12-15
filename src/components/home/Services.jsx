@@ -27,6 +27,7 @@ const Services = () => {
 export default Services;
 
 const StyledContent = styled.div`
+    ${tw`my-8 md:my-16`}
     .items {
         ${tw`grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-16 pb-10 `}
         .service {

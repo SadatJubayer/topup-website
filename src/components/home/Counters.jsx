@@ -46,7 +46,7 @@ const Counters = () => {
 export default Counters;
 
 const StyledContent = styled.div`
-    ${tw`flex flex-col space-y-5 md:(flex-row space-x-5 space-y-0) justify-between`};
+    ${tw`flex flex-col space-y-5 md:(flex-row space-x-5 space-y-0) justify-between mb-8 md:mb-16`};
     .imageContainer {
         ${tw`p-5`}
     }

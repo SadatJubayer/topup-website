@@ -124,13 +124,13 @@ const StyledContent = styled.div`
     ${tw`mt-20 md:mt-32`}
     ${tw`flex relative bg-secondary h-32 md:h-64`};
     .sliderContainer {
-        ${tw`bg-white absolute h-28 md:h-48 w-full max-width[1170px] left-1/2 transform -translate-x-1/2 -translate-y-1/2  p-5 px-10 shadow-md border-t border-gray-50 flex items-center justify-center `}
+        ${tw`bg-white absolute h-28 md:h-48 w-full max-width[1170px] left-1/2 transform -translate-x-1/2 -translate-y-1/2  p-5 px-10 shadow-sm  flex items-center justify-center `}
         .swiper-slide {
             ${tw`flex justify-center`}
         }
     }
     .bottom {
-        ${tw`absolute bottom-6 md:bottom-12 flex w-full justify-center space-x-4 md:space-x-8`}
+        ${tw`absolute bottom-6 md:bottom-16 flex w-full justify-center space-x-4 md:space-x-8`}
         button {
             ${tw`h-5 w-5 md:(h-10 w-10)`}
         }

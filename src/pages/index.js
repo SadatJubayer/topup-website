@@ -8,6 +8,7 @@ import WorkingSteps from 'components/home/WorkingSteps';
 import Layout from 'components/Layout';
 import Products from 'components/home/Products';
 import Testimonials from 'components/home/Testimonials';
+import UploadCV from 'components/home/UploadCV';
 
 export default function Home() {
     return (
@@ -20,6 +21,7 @@ export default function Home() {
             <Products />
             <TeamMembers />
             <Testimonials />
+            <UploadCV />
         </Layout>
     );
 }

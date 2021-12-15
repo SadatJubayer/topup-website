@@ -35,7 +35,7 @@ const StyledTestimonial = styled.div`
     ${tw`grid gap-5 grid-rows-2 grid-cols-3`};
 
     .testimonial {
-        ${tw`cursor-pointer background-color[#EFEFF0] p-5 text-grayColor`}
+        ${tw`cursor-pointer bg-gray-50 p-5 text-grayColor`}
         ${tw`flex flex-col space-y-5`}
         blockquote {
             ${tw`text-11 md:text-14`}
@@ -59,9 +59,13 @@ const StyledTestimonial = styled.div`
     .testimonial:nth-child(2) {
         ${tw`row-span-2 `}
     }
-    .testimonial:nth-child(2),
-    .testimonial:nth-child(3),
-    .testimonial:nth-child(4) {
+    .testimonial:nth-child(2):hover,
+    .testimonial:nth-child(3):hover,
+    .testimonial:nth-child(4):hover {
         ${tw`background[#EEF3FE]`}
+    }
+    .testimonial:nth-child(1):hover,
+    .testimonial:nth-child(5):hover {
+        ${tw`background[#EFEFF0]`}
     }
 `;

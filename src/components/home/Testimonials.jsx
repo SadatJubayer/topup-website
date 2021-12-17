@@ -31,8 +31,8 @@ const Testimonials = () => {
 export default Testimonials;
 
 const StyledTestimonial = styled.div`
-    ${tw`my-8 md:my-16`}
     ${tw`grid gap-5 grid-rows-2 grid-cols-3`};
+    ${tw`my-8 md:my-16 hidden md:block`}
 
     .testimonial {
         ${tw`cursor-pointer bg-gray-50 p-5 text-grayColor`}

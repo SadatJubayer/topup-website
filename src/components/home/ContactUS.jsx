@@ -6,6 +6,7 @@ import tw, { styled } from 'twin.macro';
 import { FiPhoneCall, FiSend, FiLink, FiMapPin } from 'react-icons/fi';
 import TextArea from 'components/TextArea';
 import Button from 'components/Button';
+import { contactUs } from 'data/contactUs';
 
 const ContactUS = () => {
     const [name, setName] = useState('');
@@ -15,10 +16,7 @@ const ContactUS = () => {
 
     return (
         <Container white>
-            <SectionTitle
-                title='Get in touch with us'
-                subtitle='We are the largest, globally-distributed network of top business, design, and technology talent, We are the largest,'
-            />
+            <SectionTitle title={contactUs.title} subtitle={contactUs.subtitle} />
             <StyledContactPage>
                 <div className='left'>
                     <form>
@@ -62,27 +60,51 @@ const ContactUS = () => {
                         <div className='Address'>
                             <FiMapPin />
                             <div className='info'>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                                <p>Lorem ipsum dolor sit amet.</p>
+                                <p>{contactUs.addressLine1}</p>
+                                <p>{contactUs.addressLine2}</p>
                             </div>
                         </div>
                         <div className='Address'>
                             <FiPhoneCall />
                             <div className='info'>
-                                <p>01685577855</p>
+                                <p>
+                                    <a href={`tel:${contactUs.phone1}`} rel='noreferrer'>
+                                        {contactUs.phone1}
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href={`tel:${contactUs.phone2}`} rel='noreferrer'>
+                                        {contactUs.phone2}
+                                    </a>
+                                </p>
                             </div>
                         </div>
                         <div className='Address'>
                             <FiSend />
                             <div className='info'>
-                                <p>info@itopup.co</p>
-                                <p>help@itopup.co</p>
+                                <p>
+                                    <a href={`mailto:${contactUs.mail1}`} rel='noreferrer'>
+                                        {contactUs.mail1}
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href={`mailto:${contactUs.mail2}`} rel='noreferrer'>
+                                        {contactUs.mail2}
+                                    </a>
+                                </p>
                             </div>
                         </div>
                         <div className='Address'>
                             <FiLink />
                             <div className='info'>
-                                <p>www.itopup.co</p>
+                                <p>
+                                    <a
+                                        href={`https://${contactUs.website}`}
+                                        target='_blank'
+                                        rel='noreferrer'>
+                                        {contactUs.website}
+                                    </a>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -110,16 +132,16 @@ const StyledContactPage = styled.div`
         .contacts {
             ${tw`flex flex-col space-y-5`}
             h4 {
-                ${tw`text-17 font-medium `}
+                ${tw`text-17 font-medium uppercase`}
             }
         }
         .Address {
             ${tw`flex space-x-8 items-center`}
             svg {
-                ${tw`text-3xl stroke-1`}
+                ${tw`text-3xl stroke-width[1.5]`}
             }
             p {
-                ${tw`text-15`}
+                ${tw`text-15 py-1`}
             }
         }
     }

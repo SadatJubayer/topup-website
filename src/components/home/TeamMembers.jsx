@@ -5,67 +5,95 @@ import tw, { styled } from 'twin.macro';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { teamMembers } from 'data/teamMembers';
+import Container from 'components/Container';
+
 SwiperCore.use([Navigation, Pagination]);
 
 const TeamMembers = () => {
     const navigationPrevRef = React.useRef(null);
     const navigationNextRef = React.useRef(null);
+    const [active, setActiveSlide] = React.useState(1);
+
+    const [swiper, setSwiper] = React.useState(null);
+    console.log(swiper);
+
+    const getSlideById = (id) => {
+        return teamMembers.find((member) => parseInt(member.id) === id);
+    };
+
     return (
         <StyledMembers>
             <SectionTitle
                 title='Our Quality Team Members'
                 subtitle='We are the largest, globally-distributed network of top business, design, and technology talent, We are the largest,'
             />
-            <div className='team'>
-                <Swiper
-                    autoplay={true}
-                    loop
-                    spaceBetween={50}
-                    slidesPerView={5}
-                    navigation={{
-                        prevEl: navigationPrevRef.current,
-                        nextEl: navigationNextRef.current
-                    }}
-                    onBeforeInit={(swiper) => {
-                        setTimeout(() => {
-                            swiper.params.navigation.prevEl = navigationPrevRef.current;
-                            swiper.params.navigation.nextEl = navigationNextRef.current;
-                            swiper.navigation.destroy();
-                            swiper.navigation.init();
-                            swiper.navigation.update();
-                        }, 500);
-                    }}
-                    onSlideChange={(swiper) => console.log('slide change', swiper.activeIndex)}
-                    onSwiper={(swiper) => console.log(swiper)}>
-                    {teamMembers.map((member) => (
-                        <SwiperSlide key={member.id}>
-                            <div className='teamMember'>
-                                <div className='picture'>
-                                    <Image
-                                        src={`/images/team/${member.image}`}
-                                        height={2450}
-                                        width={1700}
-                                        alt={member.name}
-                                    />
-                                    <div className='icon'>
+            <Container white>
+                <div className='team'>
+                    <div className='active-member'>
+                        <Image
+                            src={`/images/team/${getSlideById(active).image}`}
+                            alt='member'
+                            objectFit='cover'
+                            height={236 * 3}
+                            width={162 * 3}
+                        />
+                        <div className='icon'>
+                            <Image
+                                src='/icons/top-up.png'
+                                alt='topUp'
+                                objectFit='cover'
+                                height={71}
+                                width={71}
+                            />
+                        </div>
+                    </div>
+                    <div className='sliders'>
+                        <div className='info'>Hello From Active</div>
+                        <Swiper
+                            onSwiper={setSwiper}
+                            autoplay={true}
+                            slidesPerView={3}
+                            spaceBetweenSlides={10}
+                            breakpoints={{
+                                767: {
+                                    slidesPerView: 4,
+                                    spaceBetweenSlides: 20
+                                }
+                            }}
+                            navigation={{
+                                prevEl: navigationPrevRef.current,
+                                nextEl: navigationNextRef.current
+                            }}
+                            onBeforeInit={(swiper) => {
+                                setTimeout(() => {
+                                    swiper.params.navigation.prevEl = navigationPrevRef.current;
+                                    swiper.params.navigation.nextEl = navigationNextRef.current;
+                                    swiper.navigation.destroy();
+                                    swiper.navigation.init();
+                                    swiper.navigation.update();
+                                }, 500);
+                            }}
+                            onSlideChange={(swiper) => {
+                                console.log('slide change', swiper.activeIndex);
+                                // setActiveSlide(swiper.activeIndex);
+                            }}>
+                            {teamMembers.map((member) => (
+                                <SwiperSlide virtualIndex={member.id} key={member.id}>
+                                    <div className='teamMember'>
                                         <Image
-                                            src='/icons/top-up.png'
-                                            alt='topUp'
-                                            height={71}
-                                            width={71}
+                                            src={`/images/team/${member.image}`}
+                                            height={245}
+                                            width={170}
+                                            objectFit='cover'
+                                            alt={member.name}
                                         />
                                     </div>
-                                </div>
-                                <div className='info'>
-                                    <h3>{member.name}</h3>
-                                    <h3>{member.designation}</h3>
-                                    <h3>{member.says}</h3>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
+                </div>
+            </Container>
         </StyledMembers>
     );
 };
@@ -73,36 +101,24 @@ const TeamMembers = () => {
 export default TeamMembers;
 
 const StyledMembers = styled.div`
-    ${tw`my-10 max-width[1170px] mx-auto`};
-    .swiper-wrapper {
-        ${tw`flex items-end`}
-    }
-    .teamMember {
-        ${tw`flex space-x-5 justify-start mb-16`}
-        .info, .icon {
-            ${tw`hidden`}
-        }
-        .picture {
-            ${tw`height[245px] width[170px]`}
-        }
-    }
-    .swiper-slide {
-        /* margin-right: 10px !important; */
-    }
-    .swiper-slide-active {
-        /* ${tw`border border-red-400 `} */
-        width: 400px !important;
-        height: 600px !important;
-        .teamMember {
-            ${tw`relative`}
-        }
-        .info {
-            ${tw`flex flex-col space-y-1 absolute right-0 border top-0 transform translate-x-full`}
-        }
-        .picture {
-            ${tw`height[542px] width[375px] relative`}
+    .team {
+        ${tw`flex justify-center space-x-4 border border-green-500`}
+        .active-member {
+            ${tw`flex-1 w-44 md:w-96 min-height[250px] relative`}
             .icon {
-                ${tw`block absolute bottom-0 right-1/2 transform translate-x-1/2  translate-y-1/2`}
+                ${tw`absolute bottom-0`}
+            }
+        }
+        .sliders {
+            ${tw`flex-1 flex flex-col justify-between  border border-red-500`}
+            .teamMember {
+                ${tw`w-16 md:w-32 border border-red-400`}
+            }
+            .swiper-slide-active {
+                ${tw`hidden`}
+            }
+            .swiper-wrapper {
+                ${tw`flex-1 width[200px] md:width[600px] `}
             }
         }
     }

@@ -9,6 +9,7 @@ import Layout from 'components/Layout';
 import Products from 'components/home/Products';
 import Testimonials from 'components/home/Testimonials';
 import UploadCV from 'components/home/UploadCV';
+import ContactUS from 'components/home/ContactUS';
 
 export default function Home() {
     return (
@@ -22,6 +23,7 @@ export default function Home() {
             <TeamMembers />
             <Testimonials />
             <UploadCV />
+            <ContactUS />
         </Layout>
     );
 }

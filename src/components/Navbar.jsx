@@ -16,7 +16,7 @@ const variants = {
     hide: {
         opacity: 0,
         height: 0,
-        transition: { staggerChildren: 0.03, staggerDirection: -1, when: 'afterChildren' }
+        transition: { staggerChildren: 0.08, staggerDirection: -1, when: 'afterChildren' }
     }
 };
 const item = {

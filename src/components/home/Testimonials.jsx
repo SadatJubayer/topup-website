@@ -1,8 +1,11 @@
-import QuoteIcon from 'components/assets/QuoteIcon';
 import Container from 'components/Container';
 import SectionTitle from 'components/SectionTitle';
+import TestimonialCard from 'components/TestimonialCard';
 import { testimonials } from 'data/testimonials';
 import React from 'react';
+import SwiperCore, { Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+SwiperCore.use([Navigation, Pagination]);
 import tw, { styled } from 'twin.macro';
 
 const Testimonials = () => {
@@ -11,19 +14,18 @@ const Testimonials = () => {
             <SectionTitle title={testimonials.title} subtitle={testimonials.subtitle} />
             <StyledTestimonial>
                 {testimonials.says.map((say) => {
-                    return (
-                        <div className='testimonial' key={say.id}>
-                            <QuoteIcon />
-                            <blockquote>{say.desc}</blockquote>
-                            {say.desc2 && <blockquote>{say.desc2}</blockquote>}
-                            <div className='about'>
-                                <p className='author'>{say.author}</p>
-                                <p className='designation'>{say.designation}</p>
-                            </div>
-                        </div>
-                    );
+                    return <TestimonialCard key={say.id} testimonial={say} />;
                 })}
             </StyledTestimonial>
+            <StyledTestimonialSlider>
+                <Swiper autoHeight autoplay={true} navigation spaceBetween={10} slidesPerView={1}>
+                    {testimonials.says.map((item) => (
+                        <SwiperSlide key={item.id} className='singleSlide'>
+                            <TestimonialCard testimonial={item} />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </StyledTestimonialSlider>
         </Container>
     );
 };
@@ -32,38 +34,19 @@ export default Testimonials;
 
 const StyledTestimonial = styled.div`
     ${tw`my-8 md:my-16 hidden md:grid  gap-5 grid-rows-2 grid-cols-3`}
-    .testimonial {
-        ${tw`cursor-pointer bg-gray-50 p-5 text-grayColor`}
-        ${tw`flex flex-col space-y-5`}
-        blockquote {
-            ${tw`text-11 md:text-14`}
-        }
-        .author {
-            ${tw`text-11 md:text-15 font-bold`}
-        }
-        .designation {
-            ${tw`text-11 md:text-14`}
-        }
-        svg path {
-            ${tw`transition-all duration-150`}
-        }
-    }
-    .testimonial:hover {
-        svg path {
-            fill: #fb9747;
-        }
-    }
+`;
 
-    .testimonial:nth-child(2) {
-        ${tw`row-span-2 `}
+const StyledTestimonialSlider = styled.div`
+    ${tw`pb-8 md:hidden`}
+    .singleSlide {
+        ${tw`px-10`}
     }
-    .testimonial:nth-child(2):hover,
-    .testimonial:nth-child(3):hover,
-    .testimonial:nth-child(4):hover {
-        ${tw`background[#EEF3FE]`}
+    .swiper-button-prev,
+    .swiper-button-next {
+        ${tw`text-textColor border border-grayColor h-6 w-6 rounded-full p-1`}
     }
-    .testimonial:nth-child(1):hover,
-    .testimonial:nth-child(5):hover {
-        ${tw`background[#EFEFF0]`}
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+        font-size: 12px;
     }
 `;

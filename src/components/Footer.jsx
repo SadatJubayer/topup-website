@@ -89,6 +89,11 @@ const StyledFooter = styled.footer`
         svg {
             ${tw`text-primary`}
         }
+        :hover {
+            svg {
+                ${tw`text-secondary`}
+            }
+        }
     }
     p {
         ${tw`py-1 hover:text-secondary`}

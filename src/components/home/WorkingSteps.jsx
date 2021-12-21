@@ -53,7 +53,7 @@ const StyledSteps = styled.div`
     .left {
         ${tw`flex-1 text-grayColor`}
         h2 {
-            ${tw`text-25 md:text-38 font-bold text-center md:text-left`}
+            ${tw`text-25 md:text-38 font-bold text-center md:text-left mb-2`}
         }
         .subTitle {
             ${tw`text-13 md:text-16 font-medium max-w-2xl leading-6 letter-spacing[25] md:p-0 text-center md:text-left`}

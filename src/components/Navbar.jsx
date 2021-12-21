@@ -45,16 +45,18 @@ const Navbar = () => {
     return (
         <Container>
             <StyledNav>
-                <Link href='/' passHref>
-                    <a className='brand'>
-                        <Image
-                            alt='topUp-brand'
-                            src='/bpay.png'
-                            layout='fill'
-                            objectFit='contain'
-                        />
-                    </a>
-                </Link>
+                <div className='brandContainer'>
+                    <Link href='/' passHref>
+                        <a className='brand'>
+                            <Image
+                                alt='topUp-brand'
+                                src='/bpay.png'
+                                layout='fill'
+                                objectFit='contain'
+                            />
+                        </a>
+                    </Link>
+                </div>
                 <ul className='nav'>
                     {menuLinks.map((link) => (
                         <li key={link.id}>
@@ -112,12 +114,15 @@ const Navbar = () => {
 export default Navbar;
 
 const StyledNav = styled.nav`
-    ${tw`flex items-center justify-between py-5`};
+    ${tw`flex items-center py-5 justify-between `};
     img {
         ${tw`cursor-pointer`}
     }
+    .brandContainer {
+        ${tw`mx-auto`}
+    }
     .brand {
-        ${tw`cursor-pointer block relative height[50px] width[100px] md:(height[73px] width[144px]) `}
+        ${tw` cursor-pointer block relative height[70px] width[140px] md:(height[73px] width[144px]) `}
     }
     .nav {
         ${tw` hidden md:flex text-textColor space-x-5 items-center`}
@@ -126,7 +131,7 @@ const StyledNav = styled.nav`
         }
     }
     .mobileNav {
-        ${tw`md:hidden relative`}
+        ${tw`md:hidden relative justify-self-end`}
         .mobile-menu {
             ${tw`absolute right-0 top-full width[210px] bg-white shadow-lg px-5 py-4 grid gap-1 grid-cols-2 rounded-lg`}
             .hireButton {

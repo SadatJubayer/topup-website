@@ -70,13 +70,13 @@ const StyledContent = styled.div`
             /* ${tw`w-1/2`} */
             ${tw`text-center md:text-left max-width[550px] px-5 mx-auto`}
             h2 {
-                ${tw`font-bold text-32 md:text-45 md:pr-10`}
+                ${tw`font-bold text-32 md:text-45 md:pr-10 leading-10 md:leading-none`}
                 span {
                     ${tw`uppercase`}
                 }
             }
             p {
-                ${tw`text-15 md:text-16 py-5`}
+                ${tw`text-15 md:text-16 py-4`}
             }
         }
         .right {

@@ -53,7 +53,7 @@ const StyledContent = styled.div`
     .right {
         ${tw`text-grayColor`}
         .top h2 {
-            ${tw`text-25 md:text-38 font-bold`}
+            ${tw`text-25 md:text-38 font-bold mb-2`}
         }
         .subTitle {
             ${tw`text-13 md:text-16 font-medium max-w-xl`}

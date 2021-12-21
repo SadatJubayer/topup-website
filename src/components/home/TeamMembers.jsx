@@ -80,7 +80,7 @@ const TeamMembers = () => {
                             loop
                             breakpoints={{
                                 767: {
-                                    slidesPerView: 4
+                                    slidesPerView: 5
                                 }
                             }}
                             navigation={{
@@ -134,7 +134,7 @@ const StyledMembers = styled.div`
     .team {
         ${tw`flex justify-center space-x-5`}
         .active-member {
-            ${tw`flex-1 w-44 md:w-96 md:min-height[250px] relative mt-auto`}
+            ${tw`flex-1 w-44 md:w-96 max-width[370px] md:min-height[250px]  relative mt-auto`}
             img {
                 ${tw`rounded-lg`}
             }
@@ -147,7 +147,7 @@ const StyledMembers = styled.div`
         .sliders {
             ${tw`flex-1 flex flex-col justify-between`}
             .info {
-                ${tw`text-textColor p-5 pl-0`}
+                ${tw`text-textColor`}
                 h3 {
                     ${tw`text-16 md:text-25 font-semibold`}
                 }
@@ -173,7 +173,7 @@ const StyledMembers = styled.div`
                 ${tw`hidden`}
             }
             .swiper-wrapper {
-                ${tw`flex-1 width[200px] md:width[600px] `}
+                ${tw`flex-1 width[200px] md:width[700px] `}
             }
         }
     }

@@ -123,7 +123,7 @@ const StyledContactPage = styled.div`
         form {
             ${tw`flex flex-col space-y-5`}
             button {
-                ${tw`w-64`}
+                ${tw`w-64 self-center md:self-auto`}
             }
         }
     }

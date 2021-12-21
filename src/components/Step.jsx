@@ -1,19 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import tw, { styled } from 'twin.macro';
 import { BsPlusLg } from 'react-icons/bs';
 
-const Steps = ({ serial, title, subTitle, isExpanded }) => {
-    const [expanded, setExpanded] = useState(() => isExpanded);
+const Steps = ({ id, serial, title, subTitle, isExpanded, onClick }) => {
     return (
         <StyledStep>
-            <div className='title' onClick={() => setExpanded((p) => !p)}>
+            <div className='title' onClick={() => onClick(id)}>
                 <span>{serial}</span>
                 <h3>{title}</h3>
                 <div className='icon'>
-                    <BsPlusLg color={expanded ? '#FB9747' : '#3A3A3A'} />
+                    <BsPlusLg color={isExpanded ? '#FB9747' : '#3A3A3A'} />
                 </div>
             </div>
-            <StyledDescription isVisible={expanded}>{subTitle}</StyledDescription>
+            <StyledDescription isVisible={isExpanded}>{subTitle}</StyledDescription>
         </StyledStep>
     );
 };

@@ -2,17 +2,18 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import SectionTitle from 'components/SectionTitle';
 import tw, { styled } from 'twin.macro';
-import SwiperCore, { Navigation, Pagination } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { teamMembers } from 'data/teamMembers';
 import Container from 'components/Container';
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 const TeamMembers = () => {
     const navigationPrevRef = React.useRef(null);
     const navigationNextRef = React.useRef(null);
     const [active, setActiveSlide] = React.useState(null);
+    const [currentSwiper, setSwiper] = React.useState(null);
 
     useEffect(() => {
         setActiveSlide(teamMembers[0]);
@@ -72,10 +73,9 @@ const TeamMembers = () => {
                         </div>
 
                         <Swiper
+                            onSwiper={setSwiper}
                             slideToClickedSlide={true}
-                            watchSlidesVisibility={true}
-                            watchSlidesProgress={true}
-                            autoplay={true}
+                            autoplay={{ delay: 500 }}
                             slidesPerView={3}
                             loop
                             breakpoints={{
@@ -102,6 +102,7 @@ const TeamMembers = () => {
                                     (member) => member.id === active.id
                                 );
                                 setActiveSlide(member);
+                                currentSwiper && currentSwiper.slideTo(swiper.activeIndex);
                             }}>
                             {teamMembers.map((member) => (
                                 <SwiperSlide

@@ -6,6 +6,13 @@ import Steps from 'components/Step';
 import Container from 'components/Container';
 
 const WorkingSteps = () => {
+    const [activeIndex, setActiveIndex] = React.useState('1');
+
+    const handleClick = (id) => {
+        if (id === activeIndex) return setActiveIndex(null);
+        setActiveIndex(id);
+    };
+
     return (
         <Container white>
             <StyledSteps>
@@ -15,11 +22,13 @@ const WorkingSteps = () => {
                     <div className='steps'>
                         {workingSteps.steps.map((step) => (
                             <Steps
+                                onClick={handleClick}
                                 serial={step.id}
                                 key={step.id}
+                                id={step.id}
                                 title={step.title}
                                 subTitle={step.desc}
-                                isExpanded={step.id === '1'}
+                                isExpanded={step.id === activeIndex}
                             />
                         ))}
                     </div>
@@ -50,10 +59,10 @@ const StyledSteps = styled.div`
             ${tw`text-13 md:text-16 font-medium max-w-2xl leading-6 letter-spacing[25] md:p-0 text-center md:text-left`}
         }
         .steps {
-            ${tw`py-5 space-y-2`}
+            ${tw`pt-5 space-y-2`}
         }
     }
     .right {
-        ${tw`flex-1 hidden md:block`}
+        ${tw`flex-1 hidden self-end md:flex`}
     }
 `;

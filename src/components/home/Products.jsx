@@ -85,7 +85,7 @@ const StyledContent = styled.div`
             ${tw`text-13 md:text-16 pt-2.5 pb-5 max-width[300px] mx-auto`}
         }
         a {
-            ${tw`text-13 md:text-17 border border-grayColor w-min mx-auto px-6 md:px-8 py-1 rounded-full hover:bg-primary hover:text-white`}
+            ${tw`text-13 md:text-17 border border-grayColor w-min mx-auto px-6 md:px-8 py-1 rounded-full hover:(bg-gradient-to-r from-primary to-secondary text-white border-none)`}
         }
     }
 `;

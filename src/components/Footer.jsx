@@ -17,7 +17,7 @@ const Footer = () => {
                             <a className='brand'>
                                 <Image
                                     alt='topUp-brand'
-                                    src='/logo@2x.png'
+                                    src='/b-pay-white.png'
                                     layout='fill'
                                     objectFit='contain'
                                 />
@@ -79,7 +79,7 @@ export default Footer;
 const StyledFooter = styled.footer`
     ${tw`text-white flex flex-col justify-center items-center text-center space-y-8 md:(flex-row justify-between) md:text-left text-16 py-14 md:py-28`};
     .title {
-        ${tw`text-secondary text-18 mb-1 font-semibold`}
+        ${tw`text-white text-18 mb-1 font-semibold`}
     }
     .brand {
         ${tw` cursor-pointer block mb-5 relative height[50px] width[120px] md:(height[80px] width[150px]) `}
@@ -87,7 +87,7 @@ const StyledFooter = styled.footer`
     a {
         ${tw`block py-1 hover:text-secondary`}
         svg {
-            ${tw`text-secondary`}
+            ${tw`text-primary`}
         }
     }
     p {

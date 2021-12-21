@@ -49,7 +49,7 @@ const Navbar = () => {
                     <a className='brand'>
                         <Image
                             alt='topUp-brand'
-                            src='/logo@2x.png'
+                            src='/bpay.png'
                             layout='fill'
                             objectFit='contain'
                         />
@@ -117,7 +117,7 @@ const StyledNav = styled.nav`
         ${tw`cursor-pointer`}
     }
     .brand {
-        ${tw` cursor-pointer block relative height[50px] width[120px] md:(height[80px] width[150px]) `}
+        ${tw`cursor-pointer block relative height[50px] width[100px] md:(height[73px] width[144px]) `}
     }
     .nav {
         ${tw` hidden md:flex text-textColor space-x-5 items-center`}

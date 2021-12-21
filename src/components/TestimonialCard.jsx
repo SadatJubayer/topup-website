@@ -35,7 +35,7 @@ const StyledCard = styled.div`
     }
     :hover {
         svg path {
-            fill: #fb9747;
+            ${tw`fill-current text-secondary`}
         }
     }
     :nth-child(2) {

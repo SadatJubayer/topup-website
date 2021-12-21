@@ -17,7 +17,7 @@ const UploadCV = () => {
                 <div className='upload'>
                     <div className='texts'>
                         <h2>
-                            We are <span>HIRING CREATIVE </span>people
+                            We are <span>hiring creative </span>people
                         </h2>
                         <p>
                             Lorem Ipsum is simply dummy text of the printing is the in the ah and
@@ -54,7 +54,7 @@ const UploadCV = () => {
 export default UploadCV;
 
 const StyledContent = styled.div`
-    ${tw`w-full relative height[600px]`}
+    ${tw`w-full relative height[700px] md:height[500px]`}
 
     .image-container {
         ${tw`h-full w-full`}
@@ -68,11 +68,11 @@ const StyledContent = styled.div`
         }
         .texts {
             /* ${tw`w-1/2`} */
-            ${tw`text-center md:text-left max-width[450px] px-5 mx-auto`}
+            ${tw`text-center md:text-left max-width[550px] px-5 mx-auto`}
             h2 {
                 ${tw`font-bold text-32 md:text-45 md:pr-10`}
                 span {
-                    ${tw`text-secondary`}
+                    ${tw`uppercase`}
                 }
             }
             p {
@@ -88,7 +88,8 @@ const StyledContent = styled.div`
                 ${tw`hidden`}
             }
             label {
-                ${tw`bg-white flex flex-col items-center py-5 px-10 md:(px-16 py-10) space-y-5 text-11 md:text-20  rounded-xl shadow-lg cursor-pointer`}
+                ${tw`bg-white flex flex-col items-center py-5 px-10 md:(px-16 py-10) space-y-5 text-11 md:text-20  rounded-xl cursor-pointer`}
+                filter: drop-shadow(25px 34px 27px #0563a8);
                 .uploadIcon {
                     ${tw`w-28 md:w-36`}
                 }

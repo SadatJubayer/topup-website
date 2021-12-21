@@ -9,7 +9,7 @@ const Steps = ({ id, serial, title, subTitle, isExpanded, onClick }) => {
                 <span>{serial}</span>
                 <h3>{title}</h3>
                 <div className='icon'>
-                    <BsPlusLg color={isExpanded ? '#FB9747' : '#3A3A3A'} />
+                    <BsPlusLg color={isExpanded ? '#1174BC' : '#3A3A3A'} />
                 </div>
             </div>
             <StyledDescription isVisible={isExpanded}>{subTitle}</StyledDescription>
@@ -30,7 +30,7 @@ const StyledStep = styled.div`
     .title {
         ${tw`flex justify-start items-center uppercase bg-lightGray cursor-pointer select-none`}
         span {
-            ${tw`height[42px] width[40px] md:(height[66px] width[64px]) text-white  bg-secondary flex justify-center items-center text-14 md:text-18`}
+            ${tw`height[42px] width[40px] md:(height[66px] width[64px]) text-white  bg-primary flex justify-center items-center text-14 md:text-18`}
         }
         h3 {
             ${tw`pl-5 text-14 md:text-18`}

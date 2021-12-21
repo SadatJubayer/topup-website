@@ -18,7 +18,12 @@ const Hero = () => {
                     <Button text='CONTACT US' />
                 </div>
                 <div className='right'>
-                    <Image src='/hero@2x.png' alt='topUp' layout='fill' objectFit='contain' />
+                    <Image
+                        src='/images/hero@2x.png'
+                        alt='topUp'
+                        layout='fill'
+                        objectFit='contain'
+                    />
                 </div>
             </StyledHero>
         </Container>

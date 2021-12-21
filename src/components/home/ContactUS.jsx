@@ -128,7 +128,7 @@ const StyledContactPage = styled.div`
         }
     }
     .right {
-        ${tw`bg-primary text-white flex flex-col justify-center items-center p-5 py-8 md:p-10`}
+        ${tw`bg-gradient-to-b from-secondary to-primary text-white flex flex-col justify-center items-center p-5 py-8 md:p-10`}
         .contacts {
             ${tw`flex flex-col space-y-5`}
             h4 {
@@ -142,6 +142,11 @@ const StyledContactPage = styled.div`
             }
             p {
                 ${tw`text-15`}
+            }
+            :hover {
+                svg {
+                    ${tw`text-primary`}
+                }
             }
         }
     }

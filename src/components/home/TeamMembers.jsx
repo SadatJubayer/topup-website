@@ -39,7 +39,7 @@ const TeamMembers = () => {
                         )}
                         <div className='icon'>
                             <Image
-                                src='/icons/top-up.png'
+                                src='/icons/b-pay.png'
                                 alt='topUp'
                                 objectFit='cover'
                                 height={71}

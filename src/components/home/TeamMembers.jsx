@@ -6,7 +6,6 @@ import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { teamMembers } from 'data/teamMembers';
 import Container from 'components/Container';
-import { motion, AnimatePresence } from 'framer-motion';
 
 SwiperCore.use([Navigation, Pagination]);
 

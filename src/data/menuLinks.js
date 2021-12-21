@@ -1,4 +1,4 @@
-export default [
+const menuLinks = [
     {
         id: '1',
         label: 'Home',
@@ -30,3 +30,5 @@ export default [
         url: '#partners'
     }
 ];
+
+export default menuLinks;

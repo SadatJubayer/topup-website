@@ -15,7 +15,7 @@ const ContactUS = () => {
     const [message, setMessage] = useState('');
 
     return (
-        <Container white>
+        <Container white id='contact'>
             <SectionTitle title={contactUs.title} subtitle={contactUs.subtitle} />
             <StyledContactPage>
                 <div className='left'>
@@ -119,29 +119,29 @@ export default ContactUS;
 const StyledContactPage = styled.div`
     ${tw`flex flex-col md:(flex-row) mb-12 md:mb-16 shadow-md rounded-md overflow-hidden`};
     .left {
-        ${tw`w-full flex-1 p-5 md:p-10`}
+        ${tw`flex-1 p-5 md:p-10`}
         form {
             ${tw`flex flex-col space-y-5`}
             button {
-                ${tw`w-64 self-center md:self-auto`}
+                ${tw`self-center md:self-start uppercase`}
             }
         }
     }
     .right {
-        ${tw`bg-primary text-white flex flex-col justify-center items-center p-5 md:p-10`}
+        ${tw`bg-primary text-white flex flex-col justify-center items-center p-5 py-8 md:p-10`}
         .contacts {
             ${tw`flex flex-col space-y-5`}
             h4 {
-                ${tw`text-17 font-medium uppercase`}
+                ${tw`text-17 font-medium uppercase md:mb-3`}
             }
         }
         .Address {
-            ${tw`flex space-x-8 items-center`}
+            ${tw`flex space-x-8 items-center `}
             svg {
                 ${tw`text-3xl stroke-width[1.5]`}
             }
             p {
-                ${tw`text-15 py-1`}
+                ${tw`text-15`}
             }
         }
     }

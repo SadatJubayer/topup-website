@@ -79,19 +79,19 @@ export default Footer;
 const StyledFooter = styled.footer`
     ${tw`text-white flex flex-col justify-center items-center text-center space-y-8 md:(flex-row justify-between) md:text-left text-16 py-14 md:py-28`};
     .title {
-        ${tw`text-secondary text-18 mb-1`}
+        ${tw`text-secondary text-18 mb-1 font-semibold`}
     }
     .brand {
         ${tw` cursor-pointer block mb-5 relative height[50px] width[120px] md:(height[80px] width[150px]) `}
     }
     a {
-        ${tw`block py-1`}
+        ${tw`block py-1 hover:text-secondary`}
         svg {
             ${tw`text-secondary`}
         }
     }
     p {
-        ${tw`py-1`}
+        ${tw`py-1 hover:text-secondary`}
     }
     .social-links {
         ${tw`flex justify-center md:justify-start space-x-5 my-5`}

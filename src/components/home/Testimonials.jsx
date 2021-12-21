@@ -10,7 +10,7 @@ import tw, { styled } from 'twin.macro';
 
 const Testimonials = () => {
     return (
-        <Container white>
+        <Container white id='partners'>
             <SectionTitle title={testimonials.title} subtitle={testimonials.subtitle} />
             <StyledTestimonial>
                 {testimonials.says.map((say) => {

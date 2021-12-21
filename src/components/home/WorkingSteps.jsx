@@ -15,7 +15,7 @@ const WorkingSteps = () => {
 
     return (
         <Container white>
-            <StyledSteps>
+            <StyledSteps id='features'>
                 <div className='left'>
                     <h2>{workingSteps.title}</h2>
                     <p className='subTitle'>{workingSteps.subTitle}</p>

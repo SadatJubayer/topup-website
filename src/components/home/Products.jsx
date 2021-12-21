@@ -14,7 +14,7 @@ const Products = () => {
     const navigationNextRef = React.useRef(null);
     return (
         <Container>
-            <StyledContent>
+            <StyledContent id='portfolio'>
                 <SectionTitle
                     title='Our creative products'
                     subtitle='We are the largest, globally-distributed network of top business, design, and technology talent'

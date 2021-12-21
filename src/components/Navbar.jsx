@@ -94,7 +94,7 @@ const Navbar = () => {
                                     </motion.li>
                                 ))}
                                 <motion.li variants={item} className='hireButton'>
-                                    <Link href='/hire' passHref>
+                                    <Link href='/#contact' passHref>
                                         <a>
                                             <Button text='Hire us' />
                                         </a>

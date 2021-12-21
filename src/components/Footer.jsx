@@ -67,7 +67,7 @@ const Footer = () => {
                     </div>
                 </StyledFooter>
             </Container>
-            <p tw='py-1.5 text-13 md:text-16 text-center text-textColor'>
+            <p tw='py-1.5 text-11 md:text-13 text-textColor text-center text-textColor'>
                 © 2021 iTopUp. All Rights Reserved.
             </p>
         </>

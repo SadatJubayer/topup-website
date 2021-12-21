@@ -62,7 +62,7 @@ const Navbar = () => {
                         </li>
                     ))}
                     <li>
-                        <Link href='/hire' passHref>
+                        <Link href='/#contact' passHref>
                             <a>
                                 <Button text='Hire us' />
                             </a>

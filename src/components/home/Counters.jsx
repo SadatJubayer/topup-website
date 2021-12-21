@@ -33,8 +33,8 @@ const Counters = () => {
                         ))}
                     </div>
                     <div className='counters'>
-                        {counterData.counters.map((item) => (
-                            <SingleCount key={item.idx} count={item.count} title={item.title} />
+                        {counterData.counters.map((item, idx) => (
+                            <SingleCount key={idx} count={item.count} title={item.title} />
                         ))}
                     </div>
                 </div>

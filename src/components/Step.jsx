@@ -10,7 +10,7 @@ const Steps = ({ serial, title, subTitle, isExpanded }) => {
                 <span>{serial}</span>
                 <h3>{title}</h3>
                 <div className='icon'>
-                    <BsPlusLg color={expanded && '#FB9747'} />
+                    <BsPlusLg color={expanded ? '#FB9747' : '#3A3A3A'} />
                 </div>
             </div>
             <StyledDescription isVisible={expanded}>{subTitle}</StyledDescription>

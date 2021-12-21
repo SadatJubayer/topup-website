@@ -8,7 +8,7 @@ const teamMembers = [
     },
     {
         id: '2',
-        name: 'Sohag Hasan Pro',
+        name: 'Sohag Hasan',
         designation: 'Software Engineer (Backend)',
         says: 'We are the largest, globally-distributed network of top business, design, and technology talent, We are the largest,',
         image: 'sohag.png'
@@ -23,7 +23,7 @@ const teamMembers = [
     {
         id: '4',
         name: 'Zahid Ahmed',
-        designation: 'Software Engineer (App)',
+        designation: 'Software Engineer (Mobile Application)',
         says: 'We are the largest, globally-distributed network of top business, design, and technology talent, We are the largest,',
         image: 'zahid.png'
     },
@@ -43,24 +43,17 @@ const teamMembers = [
     },
     {
         id: '7',
-        name: 'Tonmoy Saha Durjoy',
-        designation: 'Manager Accounts & Admin',
+        name: 'Murtala Sadeh',
+        designation: 'UI/UX Expert & Graphic Designer',
         says: 'We are the largest, globally-distributed network of top business, design, and technology talent, We are the largest,',
-        image: 'zahid.png'
+        image: 'murtala.png'
     },
     {
         id: '8',
-        name: 'Sohag Hasan Pro',
-        designation: 'Backend Pro Developer',
+        name: 'Tonmoy Saha Durjoy',
+        designation: 'Manager Accounts & Admin',
         says: 'We are the largest, globally-distributed network of top business, design, and technology talent, We are the largest,',
-        image: 'sohag.png'
-    },
-    {
-        id: '9',
-        name: 'Sohag Hasan Pro',
-        designation: 'Backend Pro Developer',
-        says: 'We are the largest, globally-distributed network of top business, design, and technology talent, We are the largest,',
-        image: 'sohag.png'
+        image: 'tonmoy.png'
     }
 ];
 

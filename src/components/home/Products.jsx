@@ -41,9 +41,7 @@ const Products = () => {
                             swiper.navigation.init();
                             swiper.navigation.update();
                         }, 500);
-                    }}
-                    onSlideChange={(swiper) => console.log('slide change', swiper.activeIndex)}
-                    onSwiper={(swiper) => console.log(swiper)}>
+                    }}>
                     {products.items.map((product) => (
                         <SwiperSlide key={product.id}>
                             <div className='product'>

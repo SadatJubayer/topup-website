@@ -34,9 +34,7 @@ const Partners = () => {
                                 swiper.navigation.init();
                                 swiper.navigation.update();
                             }, 500);
-                        }}
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => console.log(swiper)}>
+                        }}>
                         <SwiperSlide>
                             <Image
                                 alt='hello'

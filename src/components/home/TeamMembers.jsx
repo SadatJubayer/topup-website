@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import SectionTitle from 'components/SectionTitle';
 import tw, { styled } from 'twin.macro';
@@ -12,7 +12,11 @@ SwiperCore.use([Navigation, Pagination]);
 const TeamMembers = () => {
     const navigationPrevRef = React.useRef(null);
     const navigationNextRef = React.useRef(null);
-    const [active, setActiveSlide] = React.useState(teamMembers[0]);
+    const [active, setActiveSlide] = React.useState(null);
+
+    useEffect(() => {
+        setActiveSlide(teamMembers[0]);
+    }, []);
 
     return (
         <StyledMembers>
@@ -23,13 +27,15 @@ const TeamMembers = () => {
             <Container white>
                 <div className='team'>
                     <div className='active-member'>
-                        <Image
-                            src={`/images/team/${active.image}`}
-                            alt='member'
-                            objectFit='cover'
-                            height={236 * 3}
-                            width={162 * 3}
-                        />
+                        {active && (
+                            <Image
+                                src={`/images/team/${active.image}`}
+                                alt='member'
+                                objectFit='cover'
+                                height={236 * 3}
+                                width={162 * 3}
+                            />
+                        )}
                         <div className='icon'>
                             <Image
                                 src='/icons/top-up.png'
@@ -42,9 +48,9 @@ const TeamMembers = () => {
                     </div>
                     <div className='sliders'>
                         <div className='info'>
-                            <h3>{active.name}</h3>
-                            <h4>{active.designation}</h4>
-                            <p>{active.says}</p>
+                            <h3>{active?.name}</h3>
+                            <h4>{active?.designation}</h4>
+                            <p>{active?.says}</p>
                         </div>
                         <div className='arrows'>
                             <button ref={navigationPrevRef}>
@@ -66,9 +72,11 @@ const TeamMembers = () => {
                         </div>
 
                         <Swiper
+                            slideToClickedSlide={true}
+                            watchSlidesVisibility={true}
+                            watchSlidesProgress={true}
                             autoplay={true}
                             slidesPerView={3}
-                            spaceBetweenSlides={10}
                             loop
                             breakpoints={{
                                 767: {
@@ -159,7 +167,7 @@ const StyledMembers = styled.div`
             }
 
             .teamMember {
-                ${tw`w-16 md:w-32 rounded-md md:rounded-lg overflow-hidden`}
+                ${tw`w-16 md:w-32 rounded-md md:rounded-lg overflow-hidden cursor-pointer`}
             }
             .swiper-slide-active {
                 ${tw`hidden`}

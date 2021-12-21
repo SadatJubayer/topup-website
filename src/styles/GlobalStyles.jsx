@@ -8,7 +8,7 @@ const CustomStyles = createGlobalStyle`
     scroll-padding-top: 10%;
   }
   body {
-    -webkit-tap-highlight-color: ${theme`colors.purple.500`};
+    -webkit-tap-highlight-color: ${theme`colors.transparent`};
     ${tw`antialiased`}
   }
 `;

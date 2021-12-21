@@ -13,7 +13,6 @@ const TeamMembers = () => {
     const navigationPrevRef = React.useRef(null);
     const navigationNextRef = React.useRef(null);
     const [active, setActiveSlide] = React.useState(null);
-    const [currentSwiper, setSwiper] = React.useState(null);
 
     useEffect(() => {
         setActiveSlide(teamMembers[0]);
@@ -73,14 +72,14 @@ const TeamMembers = () => {
                         </div>
 
                         <Swiper
-                            onSwiper={setSwiper}
                             slideToClickedSlide={true}
-                            autoplay={{ delay: 500 }}
+                            autoplay={{ delay: 1000 }}
                             slidesPerView={3}
                             loop
+                            loopedSlides={teamMembers.length * 4}
                             breakpoints={{
                                 767: {
-                                    slidesPerView: 5
+                                    slidesPerView: 4
                                 }
                             }}
                             navigation={{
@@ -94,6 +93,8 @@ const TeamMembers = () => {
                                     swiper.navigation.destroy();
                                     swiper.navigation.init();
                                     swiper.navigation.update();
+                                    swiper.loopDestroy();
+                                    swiper.loopCreate();
                                 }, 500);
                             }}
                             onSlideChange={(swiper) => {
@@ -102,7 +103,6 @@ const TeamMembers = () => {
                                     (member) => member.id === active.id
                                 );
                                 setActiveSlide(member);
-                                currentSwiper && currentSwiper.slideTo(swiper.activeIndex);
                             }}>
                             {teamMembers.map((member) => (
                                 <SwiperSlide
@@ -132,10 +132,11 @@ const TeamMembers = () => {
 export default TeamMembers;
 
 const StyledMembers = styled.div`
+    ${tw` py-8 md:py-16`}
     .team {
-        ${tw`flex justify-center space-x-5`}
+        ${tw`flex justify-center space-x-2 md:space-x-5`}
         .active-member {
-            ${tw`flex-1 w-44 md:w-96 max-width[370px] md:min-height[250px]  relative mt-auto`}
+            ${tw`flex-1 w-52 md:w-96 max-width[370px] md:min-height[250px] relative mt-auto`}
             img {
                 ${tw`rounded-lg`}
             }
@@ -148,15 +149,15 @@ const StyledMembers = styled.div`
         .sliders {
             ${tw`flex-1 flex flex-col justify-between`}
             .info {
-                ${tw`text-textColor`}
+                ${tw`text-grayColor`}
                 h3 {
                     ${tw`text-16 md:text-25 font-semibold`}
                 }
                 h4 {
-                    ${tw`text-11 md:text-14 color[#4C5157]`}
+                    ${tw`text-11 md:text-14 color[#4C5157] mt-1 md:mt-2`}
                 }
                 p {
-                    ${tw`text-11 md:text-16 max-w-lg mt-2.5 color[#4C5157] hidden md:block`}
+                    ${tw`text-11 md:text-16 max-w-lg mt-2.5 md:mt-5 color[#4C5157] hidden md:block`}
                 }
             }
 
@@ -168,13 +169,13 @@ const StyledMembers = styled.div`
             }
 
             .teamMember {
-                ${tw`w-16 md:w-32 rounded-md md:rounded-lg overflow-hidden cursor-pointer`}
+                ${tw`w-16 md:w-80 rounded-md md:rounded-lg overflow-hidden cursor-pointer`}
             }
             .swiper-slide-active {
                 ${tw`hidden`}
             }
             .swiper-wrapper {
-                ${tw`flex-1 width[200px] md:width[700px] `}
+                ${tw`flex-1 width[200px] md:width[750px] `}
             }
         }
     }

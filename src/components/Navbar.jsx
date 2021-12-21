@@ -119,7 +119,7 @@ const StyledNav = styled.nav`
         ${tw`cursor-pointer`}
     }
     .brandContainer {
-        ${tw`mx-auto`}
+        ${tw`mx-auto md:ml-0`}
     }
     .brand {
         ${tw` cursor-pointer block relative height[70px] width[140px] md:(height[73px] width[144px]) `}

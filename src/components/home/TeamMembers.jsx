@@ -6,20 +6,14 @@ import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { teamMembers } from 'data/teamMembers';
 import Container from 'components/Container';
+import { motion, AnimatePresence } from 'framer-motion';
 
 SwiperCore.use([Navigation, Pagination]);
 
 const TeamMembers = () => {
     const navigationPrevRef = React.useRef(null);
     const navigationNextRef = React.useRef(null);
-    const [active, setActiveSlide] = React.useState(1);
-
-    const [swiper, setSwiper] = React.useState(null);
-    console.log(swiper);
-
-    const getSlideById = (id) => {
-        return teamMembers.find((member) => parseInt(member.id) === id);
-    };
+    const [active, setActiveSlide] = React.useState(teamMembers[0]);
 
     return (
         <StyledMembers>
@@ -31,7 +25,7 @@ const TeamMembers = () => {
                 <div className='team'>
                     <div className='active-member'>
                         <Image
-                            src={`/images/team/${getSlideById(active).image}`}
+                            src={`/images/team/${active.image}`}
                             alt='member'
                             objectFit='cover'
                             height={236 * 3}
@@ -48,16 +42,38 @@ const TeamMembers = () => {
                         </div>
                     </div>
                     <div className='sliders'>
-                        <div className='info'>Hello From Active</div>
+                        <div className='info'>
+                            <h3>{active.name}</h3>
+                            <h4>{active.designation}</h4>
+                            <p>{active.says}</p>
+                        </div>
+                        <div className='arrows'>
+                            <button ref={navigationPrevRef}>
+                                <Image
+                                    src='/icons/left-dark.png'
+                                    alt='prev'
+                                    height={42}
+                                    width={42}
+                                />
+                            </button>
+                            <button ref={navigationNextRef}>
+                                <Image
+                                    src='/icons/right-dark.png'
+                                    alt='prev'
+                                    height={42}
+                                    width={42}
+                                />
+                            </button>
+                        </div>
+
                         <Swiper
-                            onSwiper={setSwiper}
                             autoplay={true}
                             slidesPerView={3}
                             spaceBetweenSlides={10}
+                            loop
                             breakpoints={{
                                 767: {
-                                    slidesPerView: 4,
-                                    spaceBetweenSlides: 20
+                                    slidesPerView: 4
                                 }
                             }}
                             navigation={{
@@ -74,11 +90,18 @@ const TeamMembers = () => {
                                 }, 500);
                             }}
                             onSlideChange={(swiper) => {
-                                console.log('slide change', swiper.activeIndex);
-                                // setActiveSlide(swiper.activeIndex);
+                                const active = swiper.slides[swiper.activeIndex];
+                                const member = teamMembers.find(
+                                    (member) => member.id === active.id
+                                );
+                                setActiveSlide(member);
                             }}>
                             {teamMembers.map((member) => (
-                                <SwiperSlide virtualIndex={member.id} key={member.id}>
+                                <SwiperSlide
+                                    virtualIndex={member.id}
+                                    itemID={member.id}
+                                    id={member.id}
+                                    key={member.id}>
                                     <div className='teamMember'>
                                         <Image
                                             src={`/images/team/${member.image}`}
@@ -102,17 +125,42 @@ export default TeamMembers;
 
 const StyledMembers = styled.div`
     .team {
-        ${tw`flex justify-center space-x-4 border border-green-500`}
+        ${tw`flex justify-center space-x-5`}
         .active-member {
-            ${tw`flex-1 w-44 md:w-96 min-height[250px] relative`}
+            ${tw`flex-1 w-44 md:w-96 md:min-height[250px] relative mt-auto`}
+            img {
+                ${tw`rounded-lg`}
+            }
             .icon {
-                ${tw`absolute bottom-0`}
+                ${tw`absolute bottom-0 left-1/2 transform  -translate-x-1/2 translate-y-1/3 md:translate-y-1/2`}
+                ${tw`height[30px] width[30px] md:(height[70px] width[70px])`}
             }
         }
+
         .sliders {
-            ${tw`flex-1 flex flex-col justify-between  border border-red-500`}
+            ${tw`flex-1 flex flex-col justify-between`}
+            .info {
+                ${tw`text-textColor p-5 pl-0`}
+                h3 {
+                    ${tw`text-16 md:text-25 font-semibold`}
+                }
+                h4 {
+                    ${tw`text-11 md:text-14 color[#4C5157]`}
+                }
+                p {
+                    ${tw`text-11 md:text-16 max-w-lg mt-2.5 color[#4C5157] hidden md:block`}
+                }
+            }
+
+            .arrows {
+                ${tw`hidden md:flex self-end mt-auto pr-5 pb-5 space-x-5`}
+                button {
+                    ${tw`h-8 w-8`}
+                }
+            }
+
             .teamMember {
-                ${tw`w-16 md:w-32 border border-red-400`}
+                ${tw`w-16 md:w-32 rounded-md md:rounded-lg overflow-hidden`}
             }
             .swiper-slide-active {
                 ${tw`hidden`}

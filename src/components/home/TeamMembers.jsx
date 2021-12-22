@@ -19,7 +19,7 @@ const TeamMembers = () => {
     }, []);
 
     return (
-        <StyledMembers>
+        <StyledMembers id='team'>
             <SectionTitle
                 title='Our Quality Team Members'
                 subtitle='We are the largest, globally-distributed network of top business, design, and technology talent, We are the largest,'
@@ -73,7 +73,7 @@ const TeamMembers = () => {
 
                         <Swiper
                             slideToClickedSlide={true}
-                            autoplay={{ delay: 1000 }}
+                            autoplay={{ delay: 2000 }}
                             slidesPerView={3}
                             loop
                             loopedSlides={teamMembers.length * 4}

@@ -70,13 +70,13 @@ const StyledContent = styled.div`
             /* ${tw`w-1/2`} */
             ${tw`text-center md:text-left max-width[550px] px-5 mx-auto`}
             h2 {
-                ${tw`font-bold text-32 md:text-45 md:pr-10 leading-10 md:leading-none`}
+                ${tw`font-bold text-32 md:text-45 md:pr-10 leading-10 md:leading-tight`}
                 span {
                     ${tw`uppercase`}
                 }
             }
             p {
-                ${tw`text-15 md:text-16 py-4`}
+                ${tw`text-15 md:text-16 py-2.5`}
             }
         }
         .right {
@@ -89,7 +89,7 @@ const StyledContent = styled.div`
             }
             label {
                 ${tw`bg-white flex flex-col items-center py-5 px-10 md:(px-16 py-10) space-y-5 text-11 md:text-20  rounded-xl cursor-pointer`}
-                filter: drop-shadow(25px 34px 27px #0563a8);
+                box-shadow: 25px 34px 27px rgba(0, 25, 93, 0.30);
                 .uploadIcon {
                     ${tw`w-28 md:w-36`}
                 }

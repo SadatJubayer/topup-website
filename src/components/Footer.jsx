@@ -40,7 +40,7 @@ const Footer = () => {
                             </Link>
                         ))}
                     </div>
-                    <div className='section'>
+                    <div className='section lastChild'>
                         <div className='title'>Address</div>
                         <p>{contactUs.addressLine1}</p>
                         <p>{contactUs.addressLine2}</p>
@@ -97,6 +97,11 @@ const StyledFooter = styled.footer`
     }
     p {
         ${tw`py-1 hover:text-secondary`}
+    }
+    .lastChild {
+        p {
+            ${tw`hover:text-white`}
+        }
     }
     .social-links {
         ${tw`flex justify-center md:justify-start space-x-5 my-5`}

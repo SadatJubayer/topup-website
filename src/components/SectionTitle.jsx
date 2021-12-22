@@ -18,6 +18,6 @@ const StyledTitle = styled.div`
         ${tw`text-25 md:text-38 font-bold`}
     }
     p {
-        ${tw`text-13 md:text-16 font-medium max-w-2xl leading-6 letter-spacing[25] px-2.5`}
+        ${tw`text-13 md:text-16 font-medium max-w-2xl leading-6 letter-spacing[25] px-2.5 max-width[550px]`}
     }
 `;

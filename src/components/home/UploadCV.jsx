@@ -50,12 +50,10 @@ const UploadCV = () => {
 export default UploadCV;
 
 const StyledContent = styled.div`
-    ${tw`w-full relative height[700px] md:height[500px]`}
-
+    ${tw`md:(mt-24 mb-24) w-full relative height[700px] md:height[500px]`}
     .image-container {
         ${tw`h-full w-full`}
     }
-
     .contents {
         ${tw`w-full max-w-6xl mx-auto absolute left-0 pr-5`}
         ${tw`absolute left-1/2 top-1/2 transform -translate-x-1/2  -translate-y-1/2`}

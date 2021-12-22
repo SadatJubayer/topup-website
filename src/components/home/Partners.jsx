@@ -88,7 +88,7 @@ const StyledContent = styled.div`
     ${tw`flex relative bg-primary h-32 md:h-64`};
     .sliderContainer {
         ${tw`bg-white absolute h-28 md:h-48 w-full max-width[1170px] left-1/2 transform -translate-x-1/2 -translate-y-1/2  p-5 px-10 flex items-center justify-center md:mt-8`}
-        filter: drop-shadow(0px -6px 41px rgba(0, 0, 0, 0.08));
+        filter: drop-shadow(0px 36px 41px rgba(0, 0, 0, 0.08));
         .swiper-slide {
             ${tw`flex justify-center`}
         }
@@ -100,7 +100,7 @@ const StyledContent = styled.div`
         }
     }
     .bottom {
-        ${tw`absolute bottom-6 md:bottom-16 flex w-full justify-center space-x-4 md:space-x-8`}
+        ${tw`absolute bottom-6 md:bottom-16 flex w-full justify-center space-x-4 md:space-x-8 transform md:translate-y-1/2`}
         button {
             ${tw`h-5 w-5 md:(h-10 w-10)`}
         }

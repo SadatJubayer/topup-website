@@ -67,9 +67,11 @@ const Footer = () => {
                     </div>
                 </StyledFooter>
             </Container>
-            <p tw='py-1.5 text-11 md:text-13 text-textColor text-center text-textColor'>
-                © 2021 bPay. All Rights Reserved.
-            </p>
+            <Container white>
+                <p tw='py-1.5 text-11 md:text-13 text-textColor text-center md:text-left text-textColor'>
+                    © 2021 bPay. All Rights Reserved.
+                </p>
+            </Container>
         </>
     );
 };
@@ -82,7 +84,7 @@ const StyledFooter = styled.footer`
         ${tw`text-white text-18 mb-1 font-semibold`}
     }
     .brand {
-        ${tw`cursor-pointer block mb-5 relative height[75px] width[147px] md:(height[108px] width[213px]) `}
+        ${tw`cursor-pointer block mb-5 relative height[60px] width[120px] md:(height[75px] width[147px]) `}
     }
     a {
         ${tw`block py-1 hover:text-secondary`}

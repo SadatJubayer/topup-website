@@ -124,7 +124,7 @@ const StyledNav = styled.nav`
     .nav {
         ${tw` hidden md:flex text-textColor space-x-5 items-center`}
         a {
-            ${tw`hover:text-primary text-17`}
+            ${tw`hover:text-primary text-17 font-semibold`}
         }
     }
     .mobileNav {

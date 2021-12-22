@@ -40,7 +40,7 @@ const StyledHero = styled.div`
             ${tw`text-40 md:text-58 font-bold leading-none`}
         }
         p {
-            ${tw`text-15 md:text-17 leading-snug max-width[430px] font-medium pt-1 pb-5`}
+            ${tw`text-15 md:text-17 leading-snug max-width[315px] md:max-width[430px] font-medium pt-1 pb-5`}
         }
     }
     .right {

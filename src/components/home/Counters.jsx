@@ -46,9 +46,9 @@ const Counters = () => {
 export default Counters;
 
 const StyledContent = styled.div`
-    ${tw`flex flex-col space-y-5 md:(flex-row space-x-5 space-y-0) justify-between mb-8 md:mb-16`};
+    ${tw`flex flex-col space-y-5 md:(flex-row space-x-0 space-y-0) justify-between mb-8 md:mb-16`};
     .imageContainer {
-        ${tw`p-5`}
+        ${tw`p-5 md:p-10 height[247px] width[276px] md:(height[506px] width[565px])`}
     }
     .right {
         ${tw`text-grayColor`}

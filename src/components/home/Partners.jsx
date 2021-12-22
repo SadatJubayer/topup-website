@@ -94,6 +94,9 @@ const StyledContent = styled.div`
         }
         .slideImage {
             ${tw`h-10 md:h-16`}
+            img {
+                ${tw`opacity-40 hover:opacity-90`}
+            }
         }
     }
     .bottom {

@@ -83,7 +83,7 @@ export default Products;
 const SlideWrapper = styled.div`
     ${tw`relative`}
     svg {
-        ${tw`text-xl md:text-3xl color[#95989B] hover:text-gray-600`}
+        ${tw`text-xl md:text-3xl color[#95989B] hover:text-primary`}
     }
     .navButtonLeft {
         ${tw`absolute z-20 top-1/2 left-0 md:-left-10 w-5 h-5 md:(h-10 w-10)`}

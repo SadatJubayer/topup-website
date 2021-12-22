@@ -125,7 +125,7 @@ export default TeamMembers;
 const StyledMembers = styled.div`
     ${tw` py-8 md:py-16`}
     .team {
-        ${tw`flex justify-center space-x-2 md:space-x-5`}
+        ${tw`flex justify-center space-x-2 md:space-x-5 md:mt-16`}
         .active-member {
             ${tw`flex-1 w-52 md:w-96 max-width[370px] md:min-height[250px] relative mt-auto`}
             img {
@@ -155,7 +155,7 @@ const StyledMembers = styled.div`
             .arrows {
                 ${tw`hidden md:flex self-end mt-auto pr-5 pb-5 space-x-5`}
                 svg {
-                    ${tw`text-xl md:text-3xl color[#95989B] hover:text-gray-600`}
+                    ${tw`text-xl md:text-3xl color[#dddddd] hover:text-primary`}
                 }
             }
 

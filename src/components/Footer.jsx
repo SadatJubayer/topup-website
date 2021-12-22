@@ -77,12 +77,12 @@ const Footer = () => {
 export default Footer;
 
 const StyledFooter = styled.footer`
-    ${tw`text-white flex flex-col justify-center items-center text-center space-y-8 md:(flex-row justify-between) md:text-left text-16 py-14 md:py-28`};
+    ${tw`text-white flex flex-col justify-center items-center text-center space-y-8 md:(flex-row justify-between items-start  space-y-0) md:text-left text-16 py-14 md:py-28`};
     .title {
         ${tw`text-white text-18 mb-1 font-semibold`}
     }
     .brand {
-        ${tw` cursor-pointer block mb-5 relative height[50px] width[120px] md:(height[80px] width[150px]) `}
+        ${tw`cursor-pointer block mb-5 relative height[75px] width[147px] md:(height[108px] width[213px]) `}
     }
     a {
         ${tw`block py-1 hover:text-secondary`}
@@ -100,7 +100,7 @@ const StyledFooter = styled.footer`
     }
     .lastChild {
         p {
-            ${tw`hover:text-white`}
+            ${tw`hover:text-white py-0`}
         }
     }
     .social-links {

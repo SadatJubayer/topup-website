@@ -9,8 +9,8 @@ const ServiceCard = ({ service }) => {
                 alt={service.name}
                 src={service.image}
                 objectFit='contain'
-                height={51}
-                width={34}
+                height={60}
+                width={60}
             />
             <h3>{service.name}</h3>
             <p>{service.details}</p>

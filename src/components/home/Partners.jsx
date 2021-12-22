@@ -14,7 +14,7 @@ const Partners = () => {
         <div>
             <SectionTitle
                 title='Our partner we work with'
-                subtitle='We are the largest, globally-distributed network of top business, design, and technology talent, ready to tackle your most important initiatives.'
+                subtitle='We are the largest, globally-distributed network of top business, design, and technology talent, ready to tackle.'
             />
             <StyledContent>
                 <div className='sliderContainer'>
@@ -87,7 +87,7 @@ const StyledContent = styled.div`
     ${tw`mt-20 md:mt-32`}
     ${tw`flex relative bg-primary h-32 md:h-64`};
     .sliderContainer {
-        ${tw`bg-white absolute h-28 md:h-48 w-full max-width[1170px] left-1/2 transform -translate-x-1/2 -translate-y-1/2  p-5 px-10 flex items-center justify-center `}
+        ${tw`bg-white absolute h-28 md:h-48 w-full max-width[1170px] left-1/2 transform -translate-x-1/2 -translate-y-1/2  p-5 px-10 flex items-center justify-center md:mt-8`}
         filter: drop-shadow(0px -6px 41px rgba(0, 0, 0, 0.08));
         .swiper-slide {
             ${tw`flex justify-center`}

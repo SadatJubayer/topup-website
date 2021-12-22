@@ -1,37 +1,37 @@
 {
-  "name": "topup-website",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "framer-motion": "^5.5.5",
-    "next": "12.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-icons": "^4.3.1",
-    "styled-components": "^5.3.3",
-    "swiper": "^7.2.0"
-  },
-  "devDependencies": {
-    "babel-plugin-macros": "^3.1.0",
-    "babel-plugin-styled-components": "^1.13.3",
-    "eslint": "7",
-    "eslint-config-next": "12.0.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.4.1",
-    "react-is": "^17.0.2",
-    "tailwindcss": "^2.2.19",
-    "twin.macro": "^2.8.1"
-  },
-  "babelMacros": {
-    "twin": {
-      "preset": "styled-components"
+    "name": "b-pay-website",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "framer-motion": "^5.5.5",
+        "next": "12.0.1",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "react-icons": "^4.3.1",
+        "styled-components": "^5.3.3",
+        "swiper": "^7.2.0"
+    },
+    "devDependencies": {
+        "babel-plugin-macros": "^3.1.0",
+        "babel-plugin-styled-components": "^1.13.3",
+        "eslint": "7",
+        "eslint-config-next": "12.0.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "prettier": "^2.4.1",
+        "react-is": "^17.0.2",
+        "tailwindcss": "^2.2.19",
+        "twin.macro": "^2.8.1"
+    },
+    "babelMacros": {
+        "twin": {
+            "preset": "styled-components"
+        }
     }
-  }
 }

@@ -16,7 +16,7 @@ const Footer = () => {
                         <Link href='/' passHref>
                             <a className='brand'>
                                 <Image
-                                    alt='topUp-brand'
+                                    alt='bpay-brand'
                                     src='/b-pay-white.png'
                                     layout='fill'
                                     objectFit='contain'
@@ -68,7 +68,7 @@ const Footer = () => {
                 </StyledFooter>
             </Container>
             <p tw='py-1.5 text-11 md:text-13 text-textColor text-center text-textColor'>
-                © 2021 iTopUp. All Rights Reserved.
+                © 2021 bPay. All Rights Reserved.
             </p>
         </>
     );

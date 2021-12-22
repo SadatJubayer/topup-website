@@ -13,35 +13,35 @@ const services = {
         {
             id: '2',
             name: 'Fast hiring',
-            image: '/icons/intelligent.png',
+            image: '/icons/hiring.png',
             details:
                 'We are the largest, globally-distributed network of top business, design, and technology talent.'
         },
         {
             id: '3',
             name: 'Intelligent vetting',
-            image: '/icons/intelligent.png',
+            image: '/icons/vetting.png',
             details:
                 'We are the largest, globally-distributed network of top business, design, and technology talent.'
         },
         {
             id: '4',
             name: 'Remote work made easy ',
-            image: '/icons/intelligent.png',
+            image: '/icons/remote.png',
             details:
                 'We are the largest, globally-distributed network of top business, design, and technology talent.'
         },
         {
             id: '5',
-            name: 'Intelligent vetting',
-            image: '/icons/intelligent.png',
+            name: 'Fast hiring',
+            image: '/icons/fast-hiring.png',
             details:
                 'We are the largest, globally-distributed network of top business, design, and technology talent.'
         },
         {
             id: '6',
             name: 'Remote work made easy',
-            image: '/icons/intelligent.png',
+            image: '/icons/cloud.png',
             details:
                 'We are the largest, globally-distributed network of top business, design, and technology talent.'
         }

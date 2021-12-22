@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import tw, { styled } from 'twin.macro';
+import UploadIcon from 'components/assets/UploadIcon';
 
 const UploadCV = () => {
     return (
@@ -33,12 +34,7 @@ const UploadCV = () => {
                         <div className='uploadButton'>
                             <label htmlFor='uploadCV'>
                                 <div className='uploadIcon'>
-                                    <Image
-                                        src='/images/upload.png'
-                                        alt='upload cv'
-                                        height={142 * 2}
-                                        width={173 * 2}
-                                    />
+                                    <UploadIcon />
                                 </div>
                                 <span>UPLOAD YOUR CV</span>
                             </label>
@@ -91,7 +87,12 @@ const StyledContent = styled.div`
                 ${tw`bg-white flex flex-col items-center py-5 px-10 md:(px-16 py-10) space-y-5 text-11 md:text-20  rounded-xl cursor-pointer`}
                 box-shadow: 25px 34px 27px rgba(0, 25, 93, 0.30);
                 .uploadIcon {
-                    ${tw`w-28 md:w-36`}
+                    ${tw`w-full`}
+                    :hover {
+                        path {
+                            ${tw`fill-current fill[#48b4e7]`}
+                        }
+                    }
                 }
             }
         }

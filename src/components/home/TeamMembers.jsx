@@ -6,6 +6,7 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { teamMembers } from 'data/teamMembers';
 import Container from 'components/Container';
+import { AiOutlineLeftCircle, AiOutlineRightCircle } from 'react-icons/ai';
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
@@ -39,7 +40,7 @@ const TeamMembers = () => {
                         <div className='icon'>
                             <Image
                                 src='/icons/b-pay.png'
-                                alt='topUp'
+                                alt='bPay'
                                 objectFit='cover'
                                 height={71}
                                 width={71}
@@ -54,20 +55,10 @@ const TeamMembers = () => {
                         </div>
                         <div className='arrows'>
                             <button ref={navigationPrevRef}>
-                                <Image
-                                    src='/icons/left-dark.png'
-                                    alt='prev'
-                                    height={42}
-                                    width={42}
-                                />
+                                <AiOutlineLeftCircle />
                             </button>
                             <button ref={navigationNextRef}>
-                                <Image
-                                    src='/icons/right-dark.png'
-                                    alt='prev'
-                                    height={42}
-                                    width={42}
-                                />
+                                <AiOutlineRightCircle />
                             </button>
                         </div>
 
@@ -163,8 +154,8 @@ const StyledMembers = styled.div`
 
             .arrows {
                 ${tw`hidden md:flex self-end mt-auto pr-5 pb-5 space-x-5`}
-                button {
-                    ${tw`h-8 w-8`}
+                svg {
+                    ${tw`text-xl md:text-3xl color[#95989B] hover:text-gray-600`}
                 }
             }
 

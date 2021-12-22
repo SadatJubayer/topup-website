@@ -5,7 +5,13 @@ import Image from 'next/image';
 const ServiceCard = ({ service }) => {
     return (
         <StyledCard className='service'>
-            <Image alt={service.name} src={service.image} height={51} width={34} />
+            <Image
+                alt={service.name}
+                src={service.image}
+                objectFit='contain'
+                height={51}
+                width={34}
+            />
             <h3>{service.name}</h3>
             <p>{service.details}</p>
         </StyledCard>

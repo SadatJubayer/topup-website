@@ -8,73 +8,98 @@ SwiperCore.use([Navigation, Pagination]);
 import tw, { styled } from 'twin.macro';
 import Link from 'next/link';
 import Image from 'next/image';
+import { AiOutlineLeftCircle, AiOutlineRightCircle } from 'react-icons/ai';
 
 const Products = () => {
     const navigationPrevRef = React.useRef(null);
     const navigationNextRef = React.useRef(null);
     return (
         <Container>
-            <StyledContent id='portfolio'>
-                <SectionTitle
-                    title='Our creative products'
-                    subtitle='We are the largest, globally-distributed network of top business, design, and technology talent'
-                />
-                <Swiper
-                    autoplay={true}
-                    spaceBetween={50}
-                    slidesPerView={1}
-                    breakpoints={{
-                        768: {
-                            slidesPerView: 3,
-                            spaceBetween: 20
-                        }
-                    }}
-                    navigation={{
-                        prevEl: navigationPrevRef.current,
-                        nextEl: navigationNextRef.current
-                    }}
-                    onBeforeInit={(swiper) => {
-                        setTimeout(() => {
-                            swiper.params.navigation.prevEl = navigationPrevRef.current;
-                            swiper.params.navigation.nextEl = navigationNextRef.current;
-                            swiper.navigation.destroy();
-                            swiper.navigation.init();
-                            swiper.navigation.update();
-                        }, 500);
-                    }}>
-                    {products.items.map((product) => (
-                        <SwiperSlide key={product.id}>
-                            <div className='product'>
-                                <div className='cover'>
-                                    <Image
-                                        src={`/images/${product.image}`}
-                                        width={370 * 2}
-                                        height={212 * 2}
-                                        alt={product.title}
-                                    />
+            <SlideWrapper>
+                <button className='navButtonLeft' ref={navigationPrevRef}>
+                    <AiOutlineLeftCircle />
+                </button>
+                <StyledContent id='portfolio'>
+                    <SectionTitle
+                        title='Our creative products'
+                        subtitle='We are the largest, globally-distributed network of top business, design, and technology talent'
+                    />
+                    <Swiper
+                        autoplay={true}
+                        spaceBetween={50}
+                        slidesPerView={1}
+                        breakpoints={{
+                            768: {
+                                slidesPerView: 3,
+                                spaceBetween: 20
+                            }
+                        }}
+                        navigation={{
+                            prevEl: navigationPrevRef.current,
+                            nextEl: navigationNextRef.current
+                        }}
+                        onBeforeInit={(swiper) => {
+                            setTimeout(() => {
+                                swiper.params.navigation.prevEl = navigationPrevRef.current;
+                                swiper.params.navigation.nextEl = navigationNextRef.current;
+                                swiper.navigation.destroy();
+                                swiper.navigation.init();
+                                swiper.navigation.update();
+                            }, 500);
+                        }}>
+                        {products.items.map((product) => (
+                            <SwiperSlide key={product.id}>
+                                <div className='product'>
+                                    <div className='cover'>
+                                        <Image
+                                            src={`/images/${product.image}`}
+                                            width={370 * 2}
+                                            height={212 * 2}
+                                            alt={product.title}
+                                        />
+                                    </div>
+                                    <div className='details'>
+                                        <h5>{product.title}</h5>
+                                        <p>{product.description}</p>
+                                        <Link href={product.link} passHref>
+                                            <a target='_blank'>Details</a>
+                                        </Link>
+                                    </div>
                                 </div>
-                                <div className='details'>
-                                    <h5>{product.title}</h5>
-                                    <p>{product.description}</p>
-                                    <Link href={product.link} passHref>
-                                        <a target='_blank'>Details</a>
-                                    </Link>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            </StyledContent>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </StyledContent>
+                <button className='navButtonRight' ref={navigationNextRef}>
+                    <AiOutlineRightCircle />
+                </button>
+            </SlideWrapper>
         </Container>
     );
 };
 
 export default Products;
 
+const SlideWrapper = styled.div`
+    ${tw`relative`}
+    svg {
+        ${tw`text-xl md:text-3xl color[#95989B] hover:text-gray-600`}
+    }
+    .navButtonLeft {
+        ${tw`absolute z-20 top-1/2 left-0 md:-left-10 w-5 h-5 md:(h-10 w-10)`}
+    }
+    .navButtonRight {
+        ${tw`absolute z-20 top-1/2 w-5 h-5 md:(h-10 w-10) right-0 md:-right-10`}
+    }
+`;
+
 const StyledContent = styled.div`
     ${tw`py-10 md:py-20 `}
     .sectionTitle {
         ${tw`mt-0`}
+    }
+    .product {
+        ${tw`width[82%] mx-auto`}
     }
     .product .details {
         ${tw`mt-5 text-center flex flex-col text-grayColor`}

@@ -1,14 +1,14 @@
 const contactUs = {
-    title: 'Get in touch with topup!',
+    title: 'Get in touch with bPay!',
     subtitle:
         'We are the largest, globally-distributed network of top business, design, and technology talent, We are the largest,',
     addressLine1: 'Flat 1B, House 460/A, Road 6',
     addressLine2: 'Avenue 7, Mirpur DOHS, Dhaka',
     phone1: '017454552220',
     phone2: '017454552220',
-    mail1: 'info@itopup.co',
-    mail2: 'help@itopup.co',
-    website: 'www.itopup.co',
+    mail1: 'info@bPay.co',
+    mail2: 'help@bPay.co',
+    website: 'www.bPay.co',
     services: [
         'UX/UI Design ',
         'Web Development ',
@@ -18,9 +18,9 @@ const contactUs = {
         'Digital Marketing '
     ],
     socialLinks: {
-        facebook: 'https://facebook.com/btopup',
-        youtube: 'https://youtube.com/btopup',
-        instagram: 'https://instagram.com/btopup'
+        facebook: 'https://facebook.com/bPay',
+        youtube: 'https://youtube.com/bPay',
+        instagram: 'https://instagram.com/bPay'
     }
 };
 

@@ -36,7 +36,7 @@ const WorkingSteps = () => {
                 <div className='right'>
                     <Image
                         src='/images/workingSteps.png'
-                        alt='TopUp Working Steps'
+                        alt='bPay Working Steps'
                         height={574}
                         width={570}
                     />

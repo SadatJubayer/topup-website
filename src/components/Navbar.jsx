@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Button from 'components/Button';
 import Container from 'components/Container';
 import { AnimatePresence, motion } from 'framer-motion';
+import MenuIcon from './assets/MenuIcon';
 
 const variants = {
     show: {
@@ -49,7 +50,7 @@ const Navbar = () => {
                     <Link href='/' passHref>
                         <a className='brand'>
                             <Image
-                                alt='topUp-brand'
+                                alt='bPay-brand'
                                 src='/bpay.png'
                                 layout='fill'
                                 objectFit='contain'
@@ -72,13 +73,9 @@ const Navbar = () => {
                     </li>
                 </ul>
                 <div className='mobileNav'>
-                    <Image
-                        onClick={toggleMenu}
-                        alt='menu'
-                        src='/menuIcon.png'
-                        height={30}
-                        width={30}
-                    />
+                    <div className='menu-icon' onClick={toggleMenu}>
+                        <MenuIcon />
+                    </div>
                     <AnimatePresence>
                         {showMenu && (
                             <motion.ul
@@ -132,8 +129,15 @@ const StyledNav = styled.nav`
     }
     .mobileNav {
         ${tw`md:hidden relative justify-self-end`}
+        .menu-icon {
+            svg {
+                g {
+                    ${tw`text-primary hover:text-secondary`}
+                }
+            }
+        }
         .mobile-menu {
-            ${tw`absolute right-0 top-full width[210px] bg-white shadow-lg px-5 py-4 grid gap-1 grid-cols-2 rounded-lg`}
+            ${tw`absolute right-0 top-full mt-1 width[210px] bg-white shadow-lg px-5 py-4 grid gap-1 grid-cols-2 rounded-lg`}
             .hireButton {
                 a {
                     ${tw`border-0 hover:(bg-white) `}

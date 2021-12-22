@@ -4,6 +4,7 @@ import tw, { styled } from 'twin.macro';
 import Image from 'next/image';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import partners from 'data/partners';
 SwiperCore.use([Navigation, Pagination]);
 
 const Partners = () => {
@@ -21,6 +22,13 @@ const Partners = () => {
                         autoplay={true}
                         spaceBetween={50}
                         slidesPerView={3}
+                        centeredSlides
+                        breakpoints={{
+                            768: {
+                                slidesPerView: 5,
+                                spaceBetween: 20
+                            }
+                        }}
                         loop
                         navigation={{
                             prevEl: navigationPrevRef.current,
@@ -35,62 +43,19 @@ const Partners = () => {
                                 swiper.navigation.update();
                             }, 500);
                         }}>
-                        <SwiperSlide>
-                            <Image
-                                alt='hello'
-                                src={`/icons/intelligent.png`}
-                                height={51}
-                                width={34}
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                alt='hello'
-                                src={`/icons/intelligent.png`}
-                                height={51}
-                                width={34}
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                alt='hello'
-                                src={`/icons/intelligent.png`}
-                                height={51}
-                                width={34}
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                alt='hello'
-                                src={`/icons/intelligent.png`}
-                                height={51}
-                                width={34}
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                alt='hello'
-                                src={`/icons/intelligent.png`}
-                                height={51}
-                                width={34}
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                alt='hello'
-                                src={`/icons/intelligent.png`}
-                                height={51}
-                                width={34}
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                alt='hello'
-                                src={`/icons/intelligent.png`}
-                                height={51}
-                                width={34}
-                            />
-                        </SwiperSlide>
+                        {partners.map((partner) => (
+                            <SwiperSlide key={partner.id}>
+                                <div className='slideImage'>
+                                    <Image
+                                        alt={partner.image}
+                                        src={`/icons/${partner.image}`}
+                                        objectFit='contain'
+                                        height={50}
+                                        width={120}
+                                    />
+                                </div>
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
                 </div>
                 <div className='bottom'>
@@ -126,6 +91,9 @@ const StyledContent = styled.div`
         filter: drop-shadow(0px -6px 41px rgba(0, 0, 0, 0.08));
         .swiper-slide {
             ${tw`flex justify-center`}
+        }
+        .slideImage {
+            ${tw`h-10 md:h-16`}
         }
     }
     .bottom {

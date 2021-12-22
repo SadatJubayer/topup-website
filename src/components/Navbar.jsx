@@ -130,14 +130,16 @@ const StyledNav = styled.nav`
     .mobileNav {
         ${tw`md:hidden relative justify-self-end`}
         .menu-icon {
+            ${tw`fixed right-5 top-10`}
             svg {
+                ${tw`h-8 w-8`}
                 g {
                     ${tw`text-primary hover:text-secondary`}
                 }
             }
         }
         .mobile-menu {
-            ${tw`absolute right-0 top-full mt-1 width[210px] bg-white shadow-lg px-5 py-4 grid gap-1 grid-cols-2 rounded-lg`}
+            ${tw`absolute right-0 top-full mt-5 mr-2 width[210px] bg-white shadow-lg px-5 py-4 grid gap-1 grid-cols-2 rounded-lg`}
             .hireButton {
                 a {
                     ${tw`border-0 hover:(bg-white) `}
